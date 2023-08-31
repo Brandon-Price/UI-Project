@@ -4,10 +4,13 @@ const ProductSchema = new mongoose.Schema(
     {
         title:{type: String, required:true, unique:true},
         desc:{type: String, required:true},
+        img:{type: String, required: true},
         categories:{type: Array},
-        size:{type: String},
-        colors:{type: String},
+        size:{type: Array},
+        colors:{type: Array},
         price:{type: Number, required:true},
-    },{timestamps: true});
+        availability: {type:Boolean, default: true}
+    },
+    {timestamps: true});
 
 module.exports = mongoose.model("Products", ProductSchema);
