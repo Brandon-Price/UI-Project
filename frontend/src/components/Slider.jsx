@@ -1,5 +1,9 @@
 import styled from "styled-components";
+import React, {useEffect, useState} from "react";
 import { NavigateBeforeOutlined, NavigateNextOutlined } from "@material-ui/icons";
+import { sliderItems } from "../data";
+
+// Slider is the carousel with the images and the arrows. 
 
 const Container = styled.div`
     width: 100%;
@@ -31,7 +35,8 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(0vw)
+    transition: all 1.0s ease;
+    transform: translateX(${props => props.slideIndex * -100}vw)
 `
 
 const SlideContainer = styled.div`
@@ -71,40 +76,40 @@ const Button = styled.button`
 `
 
 const Image = styled.img`
-    height: 80%;
+    height: 85%;
+    width: 100%;
+    object-fit: cover;
 `
 
 const Slider = () => {
-    //const [slideIndex, setSlideIndex] = useState;
+    const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
+        if(direction === "left"){
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1: 2);
+        }
+        else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1: 0);
+        }
+    };
 
-    }
     return (
         <Container>
             <Arrow direction = "left" onClick={()=>handleClick("left")}>
                 <NavigateBeforeOutlined/>
             </Arrow>
-            <Wrapper>
-                <SlideContainer bg = "D1FFBD">
+            <Wrapper slideIndex = {slideIndex}>
+                {sliderItems.map(item=>(
+                    <SlideContainer bg = {item.bg} key={item.id}>
                     <ImageContainer>
-                        <Image src="https://www.pngitem.com/pimgs/m/314-3141542_banana-bunch-png-transparent-png.png"/>
+                        <Image src={item.img}/>
                     </ImageContainer>
                     <InfoContainer>
-                        <Title>Now On Sale</Title>
-                        <Description>Get yours now</Description>
-                        <Button>BUY NOW</Button>
+                        <Title>{item.title}</Title>
+                        <Description>{item.desc}</Description>
+                        <Button>SHOP NOW</Button>
                     </InfoContainer>
                 </SlideContainer>
-                <SlideContainer bg = "D1FFBD">
-                    <ImageContainer>
-                        <Image src="https://www.pngitem.com/pimgs/m/314-3141542_banana-bunch-png-transparent-png.png"/>
-                    </ImageContainer>
-                    <InfoContainer>
-                        <Title>Enjoyed A Recent Vacation</Title>
-                        <Description>Buy one to Accommerate that Trip</Description>
-                        <Button>BUY NOW</Button>
-                    </InfoContainer>
-                </SlideContainer>
+                ))}
             </Wrapper>
             <Arrow direction = "right" onClick={()=>handleClick("right")}>
                 <NavigateNextOutlined/>
