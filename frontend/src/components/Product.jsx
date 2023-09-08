@@ -1,5 +1,5 @@
 import { SearchOutlined } from "@material-ui/icons"
-import {Info, Container, Image, Button, IconButton} from "product.styles.jsx";
+import {Info, Container, Image, Button, IconButton} from "../styles/product.styles.jsx";
 
 // This file is for handling the individual product items and how they
 // will appear and their containers.

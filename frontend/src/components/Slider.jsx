@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import React, {useEffect, useState} from "react";
 import { NavigateBeforeOutlined, NavigateNextOutlined } from "@material-ui/icons";
 import { sliderItems } from "../data";
-import {Container, Arrow, Wrapper, SlideContainer, ImageContainer, InfoContainer, Title, Description, Button, Image} from "Slider.styles.jsx";
+import {Container, Arrow, Wrapper, SlideContainer, ImageContainer, InfoContainer, Title, Description, Button, Image} from "../styles/Slider.styles.jsx";
 
 // Slider is the carousel with the images and the arrows. 
 

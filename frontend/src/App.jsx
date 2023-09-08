@@ -1,9 +1,9 @@
 import Item from "./pages/Item";
-//import Home from "./pages/Home";
-//import ItemList from "./pages/ItemList";
-//import ShoppingCart from "./pages/ShoppingCart";
-//import SignUpSignIn from "./pages/SignUpSignIn";
-//import Success from "./pages/Success";
+import Home from "./pages/Home";
+import ItemList from "./pages/ItemList";
+import ShoppingCart from "./pages/ShoppingCart";
+import SignUpSignIn from "./pages/SignUpSignIn";
+import Success from "./pages/Success";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -24,7 +24,7 @@ const App = () => {
   //         </Route>
   //       </Routes>
   //   </Router>
-    return <Item/>;
+    return <ShoppingCart/>;
 };
 
 export default App;
