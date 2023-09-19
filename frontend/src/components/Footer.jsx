@@ -1,9 +1,8 @@
 import { Facebook, Twitter, Instagram } from "@material-ui/icons";
-import {Container, Left, UsefulLinks, Links, LinksList, Logo, SocialContainer, SocialIcon, Right, Center} from "../styles/Footer.styles";
+import {Container, Left, UsefulLinks, Links, LinksList, Logo, SocialContainer, SocialIcon, Right, Center, FooterLink} from "../styles/Footer.styles";
 
 // Footer contains the socials, and links to the other pages, so that the user
 // doesn't have to scroll back up
-
 
 const Footer = () => {
     return (
@@ -11,9 +10,21 @@ const Footer = () => {
             <Left>
                 <UsefulLinks>Site Links</UsefulLinks>
                 <Links>
-                    <LinksList>Home</LinksList>
-                    <LinksList>Products</LinksList>
-                    <LinksList>Order History</LinksList>
+                    <LinksList>
+                        <FooterLink to="/">
+                            Home
+                        </FooterLink>
+                    </LinksList>
+                    <LinksList>
+                        <FooterLink to="/products">
+                            Products
+                        </FooterLink>
+                    </LinksList>
+                    <LinksList>
+                        <FooterLink>
+                            Order History
+                        </FooterLink>
+                    </LinksList>
                 </Links>
             </Left>
             <Center>

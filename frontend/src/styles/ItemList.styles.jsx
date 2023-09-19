@@ -28,6 +28,10 @@ export const Select = styled.select`
     border-radius: 20px;
 `
 
+export const EmptyContainer = styled.div`
+    padding: 160px;
+`
+
 export const Option = styled.option`
 
 `

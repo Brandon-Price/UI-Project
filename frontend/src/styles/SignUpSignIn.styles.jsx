@@ -18,7 +18,7 @@ export const Line = styled.div`
 
 export const LeftContainer = styled.div`
     width: 50%;
-    min-height: 300px;
+    min-height: 308px;
     
 `
 
@@ -42,13 +42,14 @@ export const Title = styled.h1`
 `
 
 export const Form = styled.form`
-    display: flex;
+    display: row;
     margin: 7px 4px 0px 0px;
     padding: 7px;
 `
 
 export const Input = styled.input`
     flex: 1;
+    margin: 2px;
     min-width: 40%;
 `
 
@@ -84,4 +85,14 @@ export const Button = styled.button`
         background-color: #497dc8;
         color: white;
     }
+
+    &:disabled {
+        cursor: not-allowed;
+        color: #497dc8;
+    }
+`
+
+export const Error = styled.span`
+    color: red;
+    display: row;
 `

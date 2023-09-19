@@ -21,7 +21,7 @@ export const InfoContainer = styled.div`
 export const Image = styled.img`
     width: 100%;
     height: 65vh;
-    object-fit: cover;
+    object-fit: contain;
 `
 
 export const Title = styled.h1`
@@ -35,7 +35,11 @@ export const Desc = styled.p`
 export const Price = styled.span`
     font-weight: 100;
     font-size: 40px;
+`
 
+export const Quantity = styled.span`
+    font-weight: 200;
+    font-size: 20px;
 `
 
 export const AddtoCart = styled.div`
@@ -44,6 +48,13 @@ export const AddtoCart = styled.div`
     display: flex;
     allign-items: center;
     justify-content: space-between;
+`
+
+export const Hr = styled.hr`
+    padding: 30px;
+    background-color: transparent;
+    border: none;
+    height: 1px;
 `
 
 export const AmountContainer = styled.div`
@@ -55,8 +66,6 @@ export const AmountContainer = styled.div`
 export const Amount = styled.span`
     width: 35px;
     height: 30px;
-    border-radius: 8px;
-    border: 1px solid;
     display: flex;
     allign-items: center;
     justify-content: center;

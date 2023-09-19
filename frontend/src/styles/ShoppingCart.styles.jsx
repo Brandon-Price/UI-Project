@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
 
@@ -20,7 +21,7 @@ export const TopTexts = styled.div`
 `
 
 export const TopText = styled.span`
-    text-decoration: underline;
+    textDecoration: underline;
     margin: 0px 10px;
 `
 
@@ -42,6 +43,7 @@ export const Info = styled.div`
 export const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    padding: 35px;
 `
 
 export const ProductInfo = styled.div`
@@ -110,7 +112,7 @@ export const CartSummary = styled.div`
     border: 0.5px solid lightgray;
     border-radius: 10px;
     padding: 20px;
-    height: 30vh;
+    height: 43vh;
 `
 
 export const SummaryTitle = styled.h1`
@@ -134,18 +136,15 @@ export const Button = styled.button`
     width: 100%;
     padding: 10px;
     font-weight: 600;
-    background-color: white;
+    background-color: black;
     border-color: black;
     cursor: pointer;
-    color: black;
     transition: all .5s ease;
     border-radius: 15px;
     z-index: 4;
 
     &:hover {
         transform: scale(1.05);
-        background-color: black;
-        color: white;
     }
 `
 
@@ -155,4 +154,18 @@ export const EmptyContainer = styled.div`
 
 export const Line = styled.hr`
     color: black;
+`
+
+export const ButtonLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+`
+
+export const Input = styled.input`
+    border: light;
+    height: 50%;
+    width: 100%;
+    color: gray;
+    font-size: 16px;
+    background-color: transparent;
 `

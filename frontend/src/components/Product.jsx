@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@material-ui/icons"
-import {Info, Container, Image, Button, IconButton} from "../styles/product.styles.jsx";
-
+import {Info, Container, Image, IconButton} from "../styles/product.styles.jsx";
+import { Link } from "react-router-dom";
 // This file is for handling the individual product items and how they
 // will appear and their containers.
 
@@ -8,17 +8,16 @@ import {Info, Container, Image, Button, IconButton} from "../styles/product.styl
 // Red Color Code #c04547
 // Green Color Code #3fa24f
 
-
-
 const Product = ({item}) => {
     return (
         <Container>
             <Image src={item.img}/>
             <Info>
-                <Button>Quick Add</Button>
-                <IconButton>
-                    <SearchOutlined/>
-                </IconButton>
+                <Link to={`/products/${item._id}`}>
+                    <IconButton>
+                        <SearchOutlined/>
+                    </IconButton>
+                </Link>
             </Info>
         </Container>
     )

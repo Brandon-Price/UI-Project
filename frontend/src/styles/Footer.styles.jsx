@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.footer`
     left: 0;
@@ -9,13 +10,13 @@ export const Container = styled.footer`
     width: 100%;
     background-color: #555555;
 `
+
 export const Left = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 1%;
 `
-
 
 export const UsefulLinks = styled.h3`
     margin-bottom: 1.5%;
@@ -30,10 +31,20 @@ export const Links = styled.ul`
     flex-wrap: wrap;
 `
 
+export const FooterLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    &:hover, &:focus{
+        text-decoration: underline;
+    };
+    &:active{
+        color: teal;
+    };
+`
+
 export const LinksList = styled.li`
     width: 40%;
     margin-bottom: 0%;
-    color: white;
 `
 
 export const Logo = styled.h1`

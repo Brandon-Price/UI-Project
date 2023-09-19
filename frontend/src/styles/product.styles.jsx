@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+// Handles ItemList Page Styles
 export const Info = styled.div`
     opacity: 0;
     width: 100%;
@@ -18,11 +19,9 @@ export const Container = styled.div`
     flex: 1;
     padding: 15px;
     margin: 50px;
-    width: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5fbfd;
     position: relative;
 
     &:hover ${Info}{

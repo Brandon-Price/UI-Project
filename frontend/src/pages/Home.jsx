@@ -6,10 +6,10 @@ import Footer from '../components/Footer';
 
 // Main Page? For now it is
 
-const Home = () => {
+const Home = ({ user, setUser }) => {
     return (
         <div>
-            <Navbar />
+            <Navbar user={user} setUser={setUser}/>
             <SubHeader />
             <Slider />
             <Footer/>

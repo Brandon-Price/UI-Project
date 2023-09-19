@@ -1,3 +1,15 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const ButtonLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+
+    &:hover, &:focus{
+        text-decoration: underline;
+    }
+`
+
 
 const Success = () => {
     return (
@@ -11,7 +23,11 @@ const Success = () => {
       }}
     >
         <p>Successfull. Your order is being prepared.</p>
-      <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
+      <button style={{ padding: 10, marginTop: 20 }}>
+        <ButtonLink to="/">
+          Go to Homepage
+        </ButtonLink>
+      </button>
     </div>
     )
 }

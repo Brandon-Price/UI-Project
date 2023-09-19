@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {mobile} from "../components/responsive";
+import { Link } from "react-router-dom";
 
 export const Container = styled.nav`
     position: sticky;
@@ -57,7 +58,7 @@ export const Center = styled.div`
 `
 
 export const Right = styled.div`
-    flex:1;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -72,4 +73,37 @@ export const Menu = styled.div`
     font-size: 16px;
     cursor: pointer;
     margin-left: 20px;
+    padding: 0px;
+    display: flex;
+`
+
+export const MenuLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+
+    &:hover, &:focus{
+        text-decoration: underline;
+    }
+`
+
+export const Line = styled.div`
+    background-color: lightgray;
+    margin: 0px 5px;
+    height: 100%;
+    padding: 1px;
+    color: gray;
+`
+
+export const Title = styled.h1`
+    font-size: 24px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: 5px;
+`
+
+export const Button = styled.button`
+    padding: 10px;
+    font-size: 12px;
+    background-color: transparent;
+    cursor: pointer;
 `
