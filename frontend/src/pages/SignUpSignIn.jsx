@@ -5,12 +5,7 @@ import {Container, Line, LeftContainer, RightContainer, Wrapper, Title, Form, In
 import { useState } from "react";
 
 const SignUpSignIn = () => {
-    // For register data
     const [email, setEmail] = useState("");
-    const [regUsername, setRegUsername] = useState("");
-    const [regPassword, setRegPassword] = useState("");
-
-    // For login data
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -20,7 +15,7 @@ const SignUpSignIn = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        register(dispatch, {regUsername, email, regPassword})
+        register(dispatch, {username, email, password})
     }
 
     const handleSignIn = (e) => {
@@ -35,9 +30,9 @@ const SignUpSignIn = () => {
                 <LeftContainer>
                     <Title>Create an Account</Title>
                     <Form>
-                        <Input placeholder="Username" onChange={(e) => setRegUsername(e.target.value)}/>
+                        <Input placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
                         <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-                        <Input placeholder="Password" type="password" onChange={(e) => setRegPassword(e.target.value)}/>
+                        <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                         <Input placeholder="Confirm Password" type="password"/>
                         {error2 && <Error>Error has occurred</Error>}
                         <Button onClick={handleRegister} disabled={isFetchingReg}>Create Account</Button>

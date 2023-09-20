@@ -35,8 +35,10 @@ const Item = () => {
         {
             quantity > 1 && setQuantity(quantity - 1);
         }
-        else {
-        //    items.quantity > quantity &&
+        else if (quantity >= items.quantity) {
+            // dont add to cart as there arent enough items
+        } else {
+        //    items.quantity > quantity
             setQuantity(quantity + 1);
         }
     };

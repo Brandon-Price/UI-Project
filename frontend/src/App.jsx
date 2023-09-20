@@ -2,7 +2,6 @@ import Item from "./pages/Item";
 import Home from "./pages/Home";
 import Help from "./pages/Help";
 import ItemList from "./pages/ItemList";
-import { useState, useEffect } from "react";
 import ShoppingCart from "./pages/ShoppingCart";
 import SignUpSignIn from "./pages/SignUpSignIn";
 import Success from "./pages/Success";
@@ -24,7 +23,7 @@ const App = () => {
             <Route path="/products/:id" element={<Item/>}/>
             <Route path="/help-center" element={<Help/>}/>
             <Route path="/cart" element={user ? <ShoppingCart/> : <SignUpSignIn/>}/>
-            <Route path="/account-log-in-sign-up" element={<SignUpSignIn/>}/>
+            <Route path="/account-log-in-sign-up" element={user ? <Home/> : <SignUpSignIn/>}/>
             <Route path="/success" element={<Success/>}/>
           </Routes>
     </Router>

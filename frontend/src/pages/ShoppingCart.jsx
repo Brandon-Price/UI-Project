@@ -43,7 +43,7 @@ const ShoppingCart = ({ ifUser }) => {
           try {
             const res = await userRequest.post("/checkout/payment", {
               tokenId: stripeToken.id,
-              amount: 500,
+              amount: cart.total * 100,
             });
             console.log(res.data);
             history.push("/success", {
