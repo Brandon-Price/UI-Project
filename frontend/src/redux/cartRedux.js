@@ -28,8 +28,14 @@ const cartSlice = createSlice({
 
             state.products = state.products.filter(item => item.id !== id);
         },
+        toRemoveAll:(state, action) =>{
+            const { id } = action.payload;
+            state.quantity = 0;
+            state.products = state.products.filter(item => item.id !== id);
+            state.total = 0;
+        },
     },
 });
 
-export const {addProduct, toRemove} = cartSlice.actions;
+export const {addProduct, toRemove, toRemoveAll} = cartSlice.actions;
 export default cartSlice.reducer;

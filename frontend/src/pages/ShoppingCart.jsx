@@ -13,8 +13,6 @@ import { useNavigate } from "react-router-dom";
 import {userRequest} from "../request";
 import { toRemove } from "../redux/cartRedux";
 
-const KEY = process.env.REACT_APP_STRIPE;
-
 const ShoppingCart = ({ ifUser }) => {
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
@@ -36,20 +34,18 @@ const ShoppingCart = ({ ifUser }) => {
     // 12/23 and any 3 digits
     /*------------------------------------------------------ */
 
-
     // TODO
     useEffect(() => {
         const makeRequest = async () => {
+            history("/success");
           try {
-            const res = await userRequest.post("/checkout/payment", {
-              tokenId: stripeToken.id,
-              amount: cart.total * 100,
+                const res = await userRequest.post("checkout/payment", {
+                tokenId: stripeToken.id,
+                amount: cart.total * 100,
             });
-            console.log(res.data);
-            history.push("/success", {
-              stripeData: res.data,
-              products: cart, });
-          } catch {}
+          } catch {
+
+          }
         };
         stripeToken && makeRequest();
       }, [stripeToken, cart, history]);
@@ -68,7 +64,7 @@ const ShoppingCart = ({ ifUser }) => {
                 </Top>
                 <Bottom>
                     <Info>
-                        { cart.products.map(product => (
+                        { cart.products.map((product) => (
                         <Product>
                             <ProductInfo>
                                 <Image src={product.img}/>
@@ -118,8 +114,9 @@ const ShoppingCart = ({ ifUser }) => {
                             shippingAddress
                             description={`Total $${finalTotal}`}
                             amount = {finalTotal * 100}
+                            currency="USD"
                             token = {onToken}
-                            stripeKey={KEY}>
+                            stripeKey={process.env.REACT_APP_STRIPE}> 
                             <Button>
                                 <ButtonLink >
                                         Checkout
