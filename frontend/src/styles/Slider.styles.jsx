@@ -55,13 +55,14 @@ export const InfoContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 11%;
+    left: 33%;
+    z-index: 3
 `
 
 export const Title = styled.h1`
     font-size: 70px;
     color: white;
-    background-color: rgba(52, 52, 52, 0.05);
+    background-color: rgba(52, 52, 52, 0.2);
     
 `
 
@@ -71,7 +72,7 @@ export const Description = styled.p`
     font-weight: 500;
     letter-spacing: 2px;
     color: white;
-    background-color: rgba(52, 52, 52, 0.05);
+    background-color: rgba(52, 52, 52, 0.2);
 `
 
 export const Button = styled.button`

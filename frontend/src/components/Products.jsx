@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 
 
 // Focuses on handling and organzing the product display page
-
 const Container = styled.div`
     padding: 20px;
     display: flex;

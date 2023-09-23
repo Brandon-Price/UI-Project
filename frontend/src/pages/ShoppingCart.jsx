@@ -34,7 +34,9 @@ const ShoppingCart = ({ ifUser }) => {
     // 12/23 and any 3 digits
     /*------------------------------------------------------ */
 
-    // TODO
+    // Right now the solution for stripe is when it is being used it will just resend the
+    // user to the success page, which is fine as it doesn't actually have to connect
+    // to the api
     useEffect(() => {
         const makeRequest = async () => {
             history("/success");

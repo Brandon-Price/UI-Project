@@ -3,9 +3,7 @@ import {Badge} from '@material-ui/core';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/userSlice.js';
 import { toRemoveAll } from '../redux/cartRedux.js';
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-
 import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
@@ -18,9 +16,10 @@ const Navbar = () => {
 
     // handle search routing
     let navigate = useNavigate();
+    
     const handleProductRoute = (passedSearchFilter) => {
-    let path = '/products/';
-    navigate(path, {state: {searchFilter: passedSearchFilter}});
+        let path = '/products/';
+        navigate(path, {state: {searchFilter: passedSearchFilter}});
     };
 
     // When users logout their cart should be set to nothing

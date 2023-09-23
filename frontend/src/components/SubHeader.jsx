@@ -3,8 +3,6 @@ import {MenuLink, Container, Wrapper, Left, Right, Menu, Menu2} from "../styles/
 
 
 // The subheader contains the pages to go around the site
-
-
 const SubHeader = () => {
     return (
         <Container>
@@ -16,7 +14,7 @@ const SubHeader = () => {
                     <MenuLink to="/products/">
                         <Menu>Products</Menu>
                     </MenuLink>
-                    <MenuLink>
+                    <MenuLink to="/order-history">
                         <Menu>Order History</Menu>
                     </MenuLink>
                 </Left>

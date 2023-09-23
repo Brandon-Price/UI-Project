@@ -14,14 +14,14 @@ import {
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
-    const handleClick = (direction) => {
-        if(direction === "left"){
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1: 2);
-        }
-        else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1: 0);
-        }
-    };
+    // const handleClick = (direction) => {
+    //     if(direction === "left"){
+    //         setSlideIndex(slideIndex > 0 ? slideIndex - 1: 2);
+    //     }
+    //     else {
+    //         setSlideIndex(slideIndex < 2 ? slideIndex + 1: 0);
+    //     }
+    // };
     // route to products page
     let navigate = useNavigate();
     const handleShopNow = () => {
@@ -31,9 +31,6 @@ const Slider = () => {
 
     return (
         <Container>
-            <Arrow direction = "left" onClick={()=>handleClick("left")}>
-                <NavigateBeforeOutlined/>
-            </Arrow>
             <Wrapper slideIndex = {slideIndex}>
                 {sliderItems.map(item=>(
                     <SlideContainer bg = {item.bg} key={item.id}>
@@ -51,9 +48,6 @@ const Slider = () => {
                     </SlideContainer>
                 ))}
             </Wrapper>
-            <Arrow direction = "right" onClick={()=>handleClick("right")}>
-                <NavigateNextOutlined/>
-            </Arrow>
         </Container>
     );
 };

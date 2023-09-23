@@ -4,6 +4,10 @@ import {Container, Left, UsefulLinks, Links, LinksList, Logo, SocialContainer, S
 // Footer contains the socials, and links to the other pages, so that the user
 // doesn't have to scroll back up
 
+
+//TODO
+// Footer needs to be redone
+
 const Footer = () => {
     return (
         <Container>

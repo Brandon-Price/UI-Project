@@ -6,7 +6,17 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: gray;   
+    overflow: hidden;
+`
+
+export const Image = styled.div`
+    background-image: url(https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?cs=srgb&dl=pexels-tae-fuller-1141853.jpg&fm=jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(3px);
 `
 
 export const Line = styled.div`
@@ -32,6 +42,7 @@ export const Wrapper = styled.div`
     padding: 20px;
     background-color: white;
     border-radius: 10px;
+    position: relative;
 `
 
 export const Title = styled.h1`
@@ -72,9 +83,9 @@ export const Button = styled.button`
     padding: 8px;
     font-size: 13px;
     background-color: white;
-    border-color: #497dc8;
+    border-color: #dd7973;
     cursor: pointer;
-    color: #497dc8;
+    color: #dd7973;
     transition: all .5s ease;
     border-radius: 15px;
     z-index: 4;
@@ -82,13 +93,13 @@ export const Button = styled.button`
 
     &:hover {
         transform: scale(1.1);
-        background-color: #497dc8;
+        background-color: #dd7973;
         color: white;
     }
 
     &:disabled {
         cursor: not-allowed;
-        color: #497dc8;
+        color: #dd7973;
     }
 `
 

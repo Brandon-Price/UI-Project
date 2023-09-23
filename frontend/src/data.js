@@ -10,24 +10,23 @@ export const sliderItems = [
         desc: "Mark your travels with a mug",
         bg: "#D1FFBD",
     },
+    // {
+    //     id: 2,
+    //     img: "https://images.pexels.com/photos/3584437/pexels-photo-3584437.jpeg?cs=srgb&dl=pexels-kehn-hermano-3584437.jpg&fm=jpg",
+    //     img2: "https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?cs=srgb&dl=pexels-tae-fuller-1141853.jpg&fm=jpg",
+    //     title: "Been There Series",
+    //     desc: "Mark your travels with a mug",
+    //     bg: "#D1FFBD",
+    // },
 
-    {
-        id: 2,
-        img: "https://images.pexels.com/photos/3584437/pexels-photo-3584437.jpeg?cs=srgb&dl=pexels-kehn-hermano-3584437.jpg&fm=jpg",
-        img2: "https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?cs=srgb&dl=pexels-tae-fuller-1141853.jpg&fm=jpg",
-        title: "Been There Series",
-        desc: "Mark your travels with a mug",
-        bg: "#D1FFBD",
-    },
-
-    {
-        id: 3,
-        img: "https://hips.hearstapps.com/hmg-prod/images/aerial-view-of-new-york-city-skyline-with-central-royalty-free-image-1645549631.jpg",
-        img2: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?cs=srgb&dl=pexels-roberto-vivancos-2190283.jpg&fm=jpg",
-        title: "Been There Series",
-        desc: "Mark your travels with a mug",
-        bg: "#D1FFBD",
-    }
+    // {
+    //     id: 3,
+    //     img: "https://hips.hearstapps.com/hmg-prod/images/aerial-view-of-new-york-city-skyline-with-central-royalty-free-image-1645549631.jpg",
+    //     img2: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?cs=srgb&dl=pexels-roberto-vivancos-2190283.jpg&fm=jpg",
+    //     title: "Been There Series",
+    //     desc: "Mark your travels with a mug",
+    //     bg: "#D1FFBD",
+    // }
 ]
 
 export const products = [
