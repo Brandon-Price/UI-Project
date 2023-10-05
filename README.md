@@ -8,7 +8,7 @@ For our project if you don't have an IDE of preference use Visual Studio Code. <
 ![image](https://github.com/Brandon-Price/SWE-Project/assets/90214909/dc9ea9c5-62ce-4f76-89c5-ef0d49bd88d0)
 
 3. Click on 'Clone Repository'
-4. In the search bar, insert as the link: https://github.com/Brandon-Price/SWE-Project
+4. In the search bar, insert as the link: https://github.com/Brandon-Price/UI-Project
 5. It will then prompt you to choose a folder to save our project, choose somewhere to save.
 6. When opening a folder in Visual Studio Code, open the actual source folder. In this case the folder is called "Project". If you open a folder that contains multiple folders with the project folder inside it will want to push all of the files currently in the ide to the git. So you want to just open the "Project" folder.
 7. Once saved and opened on Visual Studio code you will want to open a split terminal.
