@@ -5,9 +5,13 @@ const ProductSchema = new mongoose.Schema(
         title:{type: String, required:true, unique:true},
         desc:{type: String, required:true},
         img:{type: String, required: true},
+        pricePerWeight:{type: String, required: true},
         categories:{type: String, required: true},
-        price:{type: Number, required:true},
-        quantity: {type: Number, default: 0}
+        isExotic:{type: Boolean, default: false},
+        isBestSeller:{type: Boolean, default: false},
+        isStoreChoice:{type: Boolean, default: false},
+        isSeason:{type: Boolean, default: false},
+        price:{type: Number, required:true}
     },
     );
 
