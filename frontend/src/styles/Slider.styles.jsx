@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import {COLORS} from "./Navbar.styles.jsx";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
     display: flex;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: top;
+    height: calc(100vh - 200px);
 `
 
 export const Arrow = styled.div`
@@ -43,25 +46,27 @@ export const SlideContainer = styled.div`
 `
 
 export const ImageContainer = styled.div`
-    flex:1;
-    height: 100%;
-    transform: translateZ(0);
+    max-height: 500px;
+    height: 500px;
+    min-width: 100%;
+    vertical-align: middle;
+    background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/22/10/istock-683044558.jpg");
+    background-size: cover;
+    filter: drop-shadow(black 1px 1px 5px);
 `
 
 export const InfoContainer = styled.div`
-    flex:1;
-    padding: 50px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 33%;
-    z-index: 3
+    width: fit-content;
+    margin-left: 10vw;
+    margin-top: 100px;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden;
 `
 
 export const Title = styled.h1`
     font-size: 70px;
-    color: white;
+    color: ${COLORS.text};
     background-color: rgba(52, 52, 52, 0.2);
     
 `
@@ -85,7 +90,7 @@ export const Button = styled.button`
     border-radius: 15px;
 
     &:hover {
-        transform: scale(1.03);
+        transform: scale(1.05);
     }
 `
 
@@ -93,4 +98,67 @@ export const Image = styled.img`
     height: 85%;
     width: 100%;
     object-fit: cover;
+`
+
+/* added */
+export const BottomSlide = styled.div`
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+`
+
+export const SubTitle = styled.h2`
+    font-size: 50px;
+    width: 80vw;
+    max-width: 1500px;
+    color: ${COLORS.sub};
+    background-color: white;
+    text-shadow: 2px 2px 3px gray;
+`
+export const BottomInfo = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+export const ProductContainer = styled.div`
+    margin: 20px;
+    margin-top: 50px;
+    float: left;
+    height: calc(20vw + 50px);
+    width: 20vw;
+    max-height: 400px;
+    max-width: 400px;
+    filter: drop-shadow(gray 1px 1px 5px);
+    transition-duration: 0.15s;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.03);
+        filter: drop-shadow(gray 1px 1px 10px);
+    }
+`
+
+export const ProductImage = styled.img`
+    height: 20vw;
+    width: 20vw;
+    max-height: 400px;
+    max-width: 400px;
+    object-fit: cover;
+    overflow: hidden;
+`
+
+export const ProductNameContainer = styled.div`
+    display: flex;
+    height: 45px;
+    color: white;
+    color: ${COLORS.text};
+    background-color: ${COLORS.sub};
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 `

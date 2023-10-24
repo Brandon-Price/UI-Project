@@ -2,13 +2,31 @@ import styled from "styled-components"
 import {mobile} from "../components/responsive";
 import { Link } from "react-router-dom";
 
+export const COLORS = {
+    main: '#0C2340',
+    sub: '#F15A22',
+    text: '#FFFFFF',
+};
+
 export const Container = styled.nav`
     position: sticky;
     top: 0;
     z-index: 999;
     height: 10%;
     width: 100%;
-    background-color: white;
+    background-color: ${COLORS.main};
+    filter: drop-shadow(black 1px 1px 5px);
+    ${mobile({height: "50px"})}
+`
+
+/* Sub container used to remove drop shadow on Container */
+export const SubCon = styled.div`
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 10%;
+    width: 100%;
+    background-color: ${COLORS.main};
     ${mobile({height: "50px"})}
 `
 
@@ -65,6 +83,7 @@ export const Right = styled.div`
 `
 
 export const Logo = styled.h1`
+    color: ${COLORS.text}
     font-weight:bold;
     ${mobile({fontSize: "24px"})}
 `
@@ -78,11 +97,22 @@ export const Menu = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-    color: black;
+    color: ${COLORS.text};
     text-decoration: none;
 
     &:hover, &:focus{
         text-decoration: underline;
+        transform: scale(1.03);
+    }
+`
+
+/* added for cart animation */
+export const CartAnim = styled.div`
+    transistion: 0.15s;
+
+    &:hover, &:focus {
+        filter: drop-shadow(${COLORS.text} 1px 1px 10px);
+        transform: scale(1.05);
     }
 `
 

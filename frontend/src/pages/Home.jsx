@@ -11,7 +11,6 @@ const Home = () => {
     return (
         <div>
             <Navbar/>
-            <SubHeader />
             <Slider />
             <Footer/>
         </div>

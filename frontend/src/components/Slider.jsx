@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { NavigateBeforeOutlined, NavigateNextOutlined } from "@material-ui/icons";
-import { sliderItems } from "../data";
-import {Container, Arrow, Wrapper, SlideContainer, ImageContainer, InfoContainer, Title, Description, Button, Image} from "../styles/Slider.styles.jsx";
+import { sliderItems, bestSellers } from "../data";
+import {Container, Arrow, Wrapper, SlideContainer, ImageContainer, InfoContainer, Title, Description, Button, Image, BottomSlide, SubTitle, BottomInfo, ProductContainer, ProductImage, ProductNameContainer} from "../styles/Slider.styles.jsx";
 import {
     BrowserRouter as Router,
     Route,
@@ -31,23 +31,42 @@ const Slider = () => {
 
     return (
         <Container>
-            <Wrapper slideIndex = {slideIndex}>
+            <ImageContainer>
                 {sliderItems.map(item=>(
-                    <SlideContainer bg = {item.bg} key={item.id}>
-                        <ImageContainer>
-                            <Image src={item.img}/>
-                        </ImageContainer>
-                        <InfoContainer>
-                            <Title>{item.title}</Title>
-                            <Description>{item.desc}</Description>
-                            <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
-                        </InfoContainer>
-                        <ImageContainer>
-                            <Image src={item.img2}/>
-                        </ImageContainer>
-                    </SlideContainer>
+                    <InfoContainer>
+                        <Title>{item.title}</Title>
+                        <Description>{item.desc}</Description>
+                        <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
+                    </InfoContainer>
                 ))}
-            </Wrapper>
+            </ImageContainer>
+
+            <BottomSlide>
+                <SubTitle>Some of our Best Sellers</SubTitle>
+            </BottomSlide>
+                {bestSellers.map(item=>(
+                    <BottomInfo>
+                        <ProductContainer>
+                            <ProductImage src={item.first}></ProductImage>
+                            <ProductNameContainer>
+                                <h2>{item.fName}</h2>
+                            </ProductNameContainer>
+                        </ProductContainer>
+                        <ProductContainer>
+                            <ProductImage src={item.second}></ProductImage>
+                            <ProductNameContainer>
+                                <h2>{item.sName}</h2>
+                            </ProductNameContainer>
+                        </ProductContainer>
+                        <ProductContainer>
+                            <ProductImage src={item.third}></ProductImage>
+                            <ProductNameContainer>
+                                <h2>{item.tName}</h2>
+                            </ProductNameContainer>
+                        </ProductContainer>
+                    </BottomInfo>
+                ))}
+
         </Container>
     );
 };

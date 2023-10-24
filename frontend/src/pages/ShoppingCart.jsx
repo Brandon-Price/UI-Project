@@ -55,7 +55,6 @@ const ShoppingCart = ({ ifUser }) => {
     return (
         <Container>
             <Navbar ifUser={ifUser}/>
-            <SubHeader/>
             <Wrapper>
                 <Title>Your Cart</Title>
                 <Line/>

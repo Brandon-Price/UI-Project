@@ -25,7 +25,6 @@ const ItemList = ({user, setUser}) => {
     return(
         <Container>
             <Navbar user={user}/>
-            <SubHeader/>
             <FilterContainer>
                 <Filter>
                     <FilterText>Product Filter:</FilterText>
