@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { COLORS } from "./Navbar.styles"
 
 // Handles ItemList Page Styles
 export const Info = styled.div`
@@ -17,12 +18,14 @@ export const Info = styled.div`
 
 export const Container = styled.div`
     flex: 1;
+    flex-direction: column;
     padding: 15px;
     margin: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    filter: drop-shadow(black 1px 1px 5px);
 
     &:hover ${Info}{
         opacity: 1;
@@ -72,3 +75,27 @@ export const IconButton = styled.button`
         transform: scale(1.2);
     }
 `
+
+/* Added for item info */
+export const ProdInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background-color: ${COLORS.sub};
+    width: 250px;
+    height: auto;
+`
+
+export const Name = styled.label`
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: 0px;
+`
+
+export const Price = {
+    marginBottom: "10px",
+    marginTop: "0px",
+    fontFamily: "Courier New",
+};

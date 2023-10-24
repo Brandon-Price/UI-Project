@@ -8,7 +8,6 @@ const OrderHistory = () => {
     return(
         <div>
             <Navbar/>
-            <SubHeader/>
             <Orders/>
             <Footer/>
         </div>

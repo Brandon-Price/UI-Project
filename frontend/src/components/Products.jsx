@@ -4,6 +4,7 @@ import Product from "./Product";
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput } from "../styles/Products.styles";
 
 
 // Focuses on handling and organzing the product display page
@@ -12,8 +13,19 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 200px;
+    margin-left: 15px;
+    margin-right: 15px;
     justify-content: space-between;
     overflow:hidden;
+    background-color: #f0f0f0;
+    max-width: 1920px;
+    width: auto;
+`
+
+/* Added for formatting */
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const Products = ({cat, filters, sort}) => {
@@ -68,12 +80,77 @@ const Products = ({cat, filters, sort}) => {
       }, [sort]);
 
     return (
+      <Wrapper>
+        <FilterShelfContainer>
+          <FilterLabelContainer>
+            <FilterLabel>FILTERS</FilterLabel>
+          </FilterLabelContainer>
+          <FilterShelf>
+            <FilterType>Farming Practices</FilterType>
+            <FilterName>
+              <input type="checkbox"/> Organic
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Non-Organic
+            </FilterName><br></br>
+            <FilterType>Fruit Type</FilterType>
+            <FilterName>
+              <input type="checkbox"/> Berries
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Pits
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Cores
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Citrus
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Melons
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Tropical
+            </FilterName><br></br>
+            <FilterType>Weight</FilterType>
+            <FilterName>
+              <input type="checkbox"/> Small
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Medium
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Large
+            </FilterName><br></br>
+            <FilterType>Price</FilterType>
+            <FilterName>
+              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
+            </FilterName>
+            <FilterName>
+              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MAX"/>
+            </FilterName>
+            <FilterType>MISC</FilterType>
+            <FilterName>
+              <input type="checkbox"/> Store Picks
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Best Sellers
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> In-Season
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> On Sale
+            </FilterName>
+          </FilterShelf>
+        </FilterShelfContainer>
         <Container>
                  {filters
                     ? filterSelect.map((item) => <Product item={item} key={item._id} />)
                     : products
                         .map((item) => <Product item={item} key={item._id} />)}
         </Container>
+      </Wrapper>
     )
 }
 

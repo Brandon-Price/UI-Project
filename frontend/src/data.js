@@ -6,8 +6,8 @@ export const sliderItems = [
         id: 1,
         img: "https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?cs=srgb&dl=pexels-aleksandar-pasaric-2506923.jpg&fm=jpg",
         img2: "https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg?cs=srgb&dl=pexels-nick-kwan-2614818.jpg&fm=jpg",
-        title: "Been There Series",
-        desc: "Mark your travels with a mug",
+        title: "Seasonal Fruits",
+        desc: "Shop from our wide variety of in-season fruits",
         bg: "#D1FFBD",
     },
     // {
@@ -27,6 +27,17 @@ export const sliderItems = [
     //     desc: "Mark your travels with a mug",
     //     bg: "#D1FFBD",
     // }
+]
+
+export const bestSellers = [
+    {
+        first: "https://www.starkbros.com/images/dynamic/5695-560x560-fillv.jpg",
+        second: "https://cdn11.bigcommerce.com/s-s80x3kh8aj/images/stencil/1280w/products/1119/1863/original__13460.1693441692.png",
+        third: "https://www.allrecipes.com/thmb/y_uvjwXWAuD6T0RxaS19jFvZyFU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1205638014-2000-d0fbf9170f2d43eeb046f56eec65319c.jpg",
+        fName: "APPLES",
+        sName: "PINEAPPLES",
+        tName: "ORANGES",
+    },
 ]
 
 export const products = [

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/userSlice.js';
 import { toRemoveAll } from '../redux/cartRedux.js';
 import { useNavigate } from "react-router-dom";
-import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line} from "../styles/Navbar.styles.jsx"
+import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
 
@@ -41,11 +41,28 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
+
                 <Left>
                 <MenuLink to="/">
                     <Logo>TBD</Logo>
                 </MenuLink>
+                <SubCon>
+                    <Wrapper>
+                        <Left>
+                            <MenuLink to="/">
+                                <Menu>Home</Menu>
+                            </MenuLink>
+                            <MenuLink to="/products/">
+                                <Menu>Products</Menu>
+                            </MenuLink>
+                            <MenuLink to="/order-history/">
+                                <Menu>About</Menu>
+                            </MenuLink>
+                        </Left>
+                    </Wrapper>
+                </SubCon>
                 </Left>
+
                 <Center>
                     <SearchContainer>
                         <Search style ={{color: "gray", fontSize:20}}/>
@@ -53,18 +70,22 @@ const Navbar = () => {
                         <Input placeholder = "Search" onKeyDown={(e) => handleSearch(e)}/>
                     </SearchContainer>
                 </Center>
+
                 <Right>
                     {user ? (<Menu><Title style={{cursor: "default"}}>Hello {user.username}</Title><ExitToApp onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
                         <Menu>Register/Sign In</Menu>
                     </MenuLink>)}
                     <Menu>
                         <MenuLink to="/cart">
-                            <Badge badgeContent={cartItems} color = "primary" overlap="rectangular" style={{ padding: '1px' }}>
-                                <LocalMallOutlined/>
-                            </Badge>
+                            <CartAnim>
+                                <Badge badgeContent={cartItems} color = "primary" overlap="rectangular" style={{ padding: '1px' }}>
+                                    <LocalMallOutlined/>
+                                </Badge>
+                            </CartAnim>
                         </MenuLink>
                     </Menu>
                 </Right>
+
             </Wrapper>
         </Container>
     )

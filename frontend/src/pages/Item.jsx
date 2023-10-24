@@ -54,7 +54,6 @@ const Item = () => {
     return (
         <Container>
             <Navbar/>
-            <SubHeader/>
             <Wrapper>
                 <ImgContainer>
                     <Image src={items.img} />

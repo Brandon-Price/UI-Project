@@ -1,84 +1,104 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import {COLORS} from "./Navbar.styles.jsx";
 
-export const Container = styled.footer`
-    left: 0;
-    position: relative;
-    bottom: 0;
-    right: 0;
+export const Foot = styled.footer`
     display: flex;
-    width: 100%;
-    background-color: #555555;
-`
-
-export const Left = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-`
-
-export const UsefulLinks = styled.h3`
-    margin-bottom: 1.5%;
-    color: white;
-`
-
-export const Links = styled.ul`
-    margin: 0%;
-    padding: 0%;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-`
-
-export const FooterLink = styled(Link)`
-    color: white;
-    text-decoration: none;
-    &:hover, &:focus{
-        text-decoration: underline;
-    };
-    &:active{
-        color: teal;
-    };
-`
-
-export const LinksList = styled.li`
-    width: 40%;
-    margin-bottom: 0%;
-`
-
-export const Logo = styled.h1`
-    color: white;
-    display: flex;
-    align-items: center;
-    margin: 4%;
-`
-
-export const SocialContainer = styled.div`
-    display: flex;
-`
-
-export const SocialIcon = styled.div`
-    width: 100%;
-    height: 100%;
-    border-radius: 20%;
-    color: white;
-    background-color: #${props => props.color};
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 20px;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    padding-top: 48px;
+    padding-bottom: 57px;
+    background-color: ${COLORS.main};
+`
+
+export const Head3 = styled.h3`
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+`
+
+export const Para = styled.p`
+    font-style: italic;
+`
+
+export const gitLink = styled.a`
+    text-decoration: none;
+`
+
+export const SVG = styled.svg`
+    height: 25px;
+    width: 25px;
+    fill: #ececec;
+    vertical-align: middle;
     cursor: pointer;
+    transition: 0.15s;
+
+    &:hover {
+        fill: #ffffff;
+        filter: drop-shadow( 0px 3px 5px rgba(255, 255, 255, 1));
+    }
 `
 
-export const Right = styled.div`
+export const SPN = styled.span`
+    color: ${COLORS.text};
+    margin-left: 10px;
+    margin-right: 0;
+`
+
+export const Row = styled.div`
     display: flex;
-    align-items: end;
-    justify-content: flex-end;
-    flex-direction: column;
-    padding: 20px;
+    flex-wrap: nowrap;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: auto;
 `
 
-export const Center = styled.div`
-    flex: 1;
+export const Col1 = styled.div`
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
 `
+export const Col2 = styled.div`
+    margin-left: 30px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    width: 500px;
+    border-left: 2px solid ${COLORS.text};
+    text-align: left!important;
+`
+
+export const Col3 = styled.div`
+    margin-right: 30px;
+    margin-left: 30px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 150px;
+    border-left: 2px solid ${COLORS.text};
+    border-right: 2px solid ${COLORS.text});
+    text-align: left!important;
+`
+export const Name = styled.label`
+    color: ${COLORS.text};
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    margin-top: 0;
+    transition: color 0.5s;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+`
+
+export const tname = {
+    color: "white",
+    textDecoration: "none",
+}
