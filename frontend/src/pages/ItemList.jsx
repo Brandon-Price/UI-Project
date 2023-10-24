@@ -27,14 +27,6 @@ const ItemList = ({user, setUser}) => {
             <Navbar user={user}/>
             <FilterContainer>
                 <Filter>
-                    <FilterText>Product Filter:</FilterText>
-                    <Select name="category" onChange={handleFilter} defaultValue={"hidden"}>
-                        <Option value="hidden" disabled="disabled">Filter</Option>
-                        <Option value="country">country</Option>
-                        <Option value="city">city</Option>
-                    </Select>
-                </Filter>
-                <Filter>
                     <FilterText>Product Sort:</FilterText>
                     <Select name="sort" onChange = {(e) => setSort(e.target.value)}>
                         <Option value="ascending">Price Ascending</Option>
