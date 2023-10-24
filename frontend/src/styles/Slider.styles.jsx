@@ -8,7 +8,7 @@ export const Container = styled.div`
     align-items: center;
     text-align: center;
     justify-content: top;
-    height: calc(100vh - 200px);
+    height: 120vh;
 `
 
 export const Arrow = styled.div`
