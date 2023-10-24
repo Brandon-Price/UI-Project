@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { COLORS } from "./Navbar.styles"
 
 // Handles ItemList Page Styles
 export const Info = styled.div`
@@ -82,7 +83,7 @@ export const ProdInfo = styled.div`
     text-align: center;
     justify-content: center;
     color: white;
-    background-color: #f15a22;
+    background-color: ${COLORS.sub};
     width: 250px;
     height: auto;
 `
