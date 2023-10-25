@@ -61,9 +61,9 @@ const Item = () => {
                 <InfoContainer>
                     <Title>{items.title}</Title>
                     <Desc>{items.desc}</Desc>
-                    <Price>${items.price}</Price>
+                    <Price>{items.pricePerWeight}</Price>
                     <br/>
-                    <Quantity>Quantity Left: {items.quantity}</Quantity>
+                    <Price>${items.price}</Price>
                     <Hr/>
                     <AddtoCart>
                         <AmountContainer>

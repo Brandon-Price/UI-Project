@@ -24,7 +24,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    filter: drop-shadow(#aaaaaa 1px 1px 5px);
+    filter: drop-shadow(#aaaaaa 1px 1px 3px);
 
     &:hover ${Info}{
         opacity: 1;

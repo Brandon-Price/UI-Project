@@ -31,7 +31,6 @@ const ItemList = ({user, setUser}) => {
                     <Select name="sort" onChange = {(e) => setSort(e.target.value)}>
                         <Option value="ascending">Price Ascending</Option>
                         <Option value="descending">Price Descending</Option>
-                        <Option value="quantity">Quantity Remaining</Option>
                     </Select>
                 </Filter>
             </FilterContainer>

@@ -72,18 +72,18 @@ const Products = ({cat, filters, sort}) => {
             [...prev].sort((a, b) => b.price - a.price)
           );
         }
-        else if (sort === "quantity"){
-          setFilters((prev) =>
-            [...prev].sort((a, b) => b.quantity - a.quantity)
-          );
-        }
+        // else if (sort === "quantity"){
+        //   setFilters((prev) =>
+        //     [...prev].sort((a, b) => b.quantity - a.quantity)
+        //   );
+        // }
       }, [sort]);
 
     return (
       <Wrapper>
         <FilterShelfContainer>
           <FilterLabelContainer>
-            <FilterLabel>FILTERS</FilterLabel>
+            <FilterLabel>Filter By</FilterLabel>
           </FilterLabelContainer>
           <FilterShelf>
             <FilterType>Farming Practices</FilterType>
