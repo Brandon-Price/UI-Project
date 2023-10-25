@@ -10,7 +10,7 @@ export const Header = styled.h1`
 
 export const FilterContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 `
 
 export const Filter = styled.div`
@@ -29,7 +29,7 @@ export const Select = styled.select`
 `
 
 export const EmptyContainer = styled.div`
-    padding: 160px;
+    padding: 25px;
 `
 
 export const Option = styled.option`

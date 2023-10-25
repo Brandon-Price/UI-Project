@@ -10,16 +10,16 @@ import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, F
 // Focuses on handling and organzing the product display page
 const Container = styled.div`
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 25px;
     margin-left: 15px;
     margin-right: 15px;
     justify-content: space-between;
     overflow:hidden;
-    background-color: #f0f0f0;
     max-width: 1920px;
-    width: auto;
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d4d4d4;
 `
 
 /* Added for formatting */

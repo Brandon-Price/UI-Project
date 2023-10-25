@@ -20,12 +20,11 @@ export const Container = styled.div`
     flex: 1;
     flex-direction: column;
     padding: 15px;
-    margin: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    filter: drop-shadow(black 1px 1px 5px);
+    filter: drop-shadow(#aaaaaa 1px 1px 5px);
 
     &:hover ${Info}{
         opacity: 1;
@@ -35,7 +34,8 @@ export const Container = styled.div`
 export const Image = styled.img`
     z-index: 2;
     height: 250px;
-    object-fit: contain;
+    width: 250px;
+    object-fit: cover;
 `
 
 export const Button = styled.button`
@@ -91,7 +91,7 @@ export const ProdInfo = styled.div`
 export const Name = styled.label`
     font-weight: bold;
     margin: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 `
 
 export const Price = {
