@@ -86,13 +86,6 @@ const Products = ({cat, filters, sort}) => {
             <FilterLabel>Filter By</FilterLabel>
           </FilterLabelContainer>
           <FilterShelf>
-            <FilterType>Farming Practices</FilterType>
-            <FilterName>
-              <input type="checkbox"/> Organic
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Non-Organic
-            </FilterName><br></br>
             <FilterType>Fruit Type</FilterType>
             <FilterName>
               <input type="checkbox"/> Berries
