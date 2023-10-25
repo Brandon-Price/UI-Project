@@ -73,7 +73,7 @@ const Navbar = () => {
 
                 <Right>
                     {user ? (<Menu><Title style={{cursor: "default", color:"white"}}>Hello {user.username}</Title><ExitToApp style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
-                        <Menu>Register/Sign In</Menu>
+                        <Menu>Login</Menu>
                     </MenuLink>)}
                     <Menu>
                         <MenuLink to="/cart">
