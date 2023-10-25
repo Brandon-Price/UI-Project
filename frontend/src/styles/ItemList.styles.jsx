@@ -29,7 +29,7 @@ export const Select = styled.select`
 `
 
 export const EmptyContainer = styled.div`
-    padding: 25px;
+    
 `
 
 export const Option = styled.option`

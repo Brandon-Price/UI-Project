@@ -10,6 +10,7 @@ export const Foot = styled.footer`
     width: 100%;
     bottom: 0;
     padding-top: 48px;
+    margin-top: 50px;
     padding-bottom: 57px;
     background-color: ${COLORS.main};
 `

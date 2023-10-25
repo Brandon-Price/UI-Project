@@ -8,7 +8,7 @@ export const Container = styled.div`
     align-items: center;
     text-align: center;
     justify-content: top;
-    height: 120vh;
+    height: auto;
 `
 
 export const Arrow = styled.div`
@@ -115,9 +115,12 @@ export const SubTitle = styled.h2`
     font-size: 50px;
     width: 80vw;
     max-width: 1500px;
+    padding-bottom: 5px;
     color: ${COLORS.sub};
     background-color: white;
     text-shadow: 2px 2px 3px gray;
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d4d4d4;
 `
 export const BottomInfo = styled.div`
     display: flex;

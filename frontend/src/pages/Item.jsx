@@ -61,7 +61,7 @@ const Item = () => {
                 <InfoContainer>
                     <Title>{items.title}</Title>
                     <Desc>{items.desc}</Desc>
-                    <Price>{items.pricePerWeight}</Price>
+                    <Price>${items.pricePerWeight}</Price>
                     <br/>
                     <Price>${items.price}</Price>
                     <Hr/>
