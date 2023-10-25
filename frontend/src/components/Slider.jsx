@@ -36,6 +36,7 @@ const Slider = () => {
         };
         getProd();
     }, []);
+    
     const allBest = prod.filter(prod => prod.isBestSeller);
     const allPicks = prod.filter(prod => prod.isStoreChoice);
     const allExotic = prod.filter(prod => prod.isExotic);
@@ -44,14 +45,6 @@ const Slider = () => {
     const exotic = shuffleArray(allExotic).slice(0, 3);
 
     const [slideIndex, setSlideIndex] = useState(0);
-    // const handleClick = (direction) => {
-    //     if(direction === "left"){
-    //         setSlideIndex(slideIndex > 0 ? slideIndex - 1: 2);
-    //     }
-    //     else {
-    //         setSlideIndex(slideIndex < 2 ? slideIndex + 1: 0);
-    //     }
-    // };
     // route to products page
     let navigate = useNavigate();
     const handleShopNow = () => {
