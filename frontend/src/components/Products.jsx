@@ -3,7 +3,7 @@ import Product from "./Product";
 //import { products } from "../data";
 import axios from "axios";
 import {useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput } from "../styles/Products.styles";
 
 
@@ -32,7 +32,7 @@ const Products = ({cat, filters, sort}) => {
     const [products, setProducts] = useState([]);
     const [filterSelect, setFilters] = useState([]);
     // grab passed string from search bar, or "" if empty
-    const [searchFilter, setSearchFilter] = useState(useLocation().state);
+    const searchFilter = useSelector(state => state.searchFilter.content)
 
     // Grabs all products
     useEffect(() => {
@@ -46,10 +46,6 @@ const Products = ({cat, filters, sort}) => {
         getProducts();
       }, []);
 
-      
-
-    // useEffect to handle item filter, so by country or city
-    // this doesn't work properly
     // TODO
     useEffect(() => { 
         setFilters(
@@ -138,10 +134,13 @@ const Products = ({cat, filters, sort}) => {
           </FilterShelf>
         </FilterShelfContainer>
         <Container>
-                 {filters
-                    ? filterSelect.map((item) => <Product item={item} key={item._id} />)
-                    : products
-                        .map((item) => <Product item={item} key={item._id} />)}
+          {filters
+              ? filterSelect.filter(filterSelect => filterSelect.title.toLowerCase()
+              .includes(searchFilter.toLowerCase()))
+              .map((item) => <Product item={item} key={item._id} />)
+              : products.filter(filterSelect => filterSelect.title.toLowerCase()
+              .includes(searchFilter.toLowerCase()))
+                  .map((item) => <Product item={item} key={item._id} />)}
         </Container>
       </Wrapper>
     )
