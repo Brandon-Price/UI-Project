@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/userSlice.js';
 import { toRemoveAll } from '../redux/cartRedux.js';
 import { useNavigate } from "react-router-dom";
-import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon} from "../styles/Navbar.styles.jsx"
+import { useState, useRef } from 'react';
+import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
 
@@ -38,6 +39,25 @@ const Navbar = () => {
         }
     };
 
+    /* Expanding Menu */
+    const parentRef = useRef(null);
+    const [isExpanded, setIsExpanded] = useState(false);
+    const handleToggle = () => {
+        setIsExpanded(!isExpanded);
+        revertChild();
+    }
+
+    /* Product Menu */
+    const childRef = useRef(null);
+    const handleTransitionEnd = () => {
+        if (isExpanded) {
+            childRef.current.style.display = "block";
+        }
+    }
+    const revertChild = () => {
+        childRef.current.style.display = "none";
+    }
+
     return (
         <Container>
             <Wrapper>
@@ -49,13 +69,13 @@ const Navbar = () => {
                 <SubCon>
                     <Wrapper>
                         <Left>
-                            <MenuLink to="/">
+                            <MenuLink to="/" onClick={isExpanded ? handleToggle : ""}>
                                 <Menu>Home</Menu>
                             </MenuLink>
-                            <MenuLink to="/products/">
+                            <ProdButton onClick={handleToggle}>
                                 <Menu>Products</Menu>
-                            </MenuLink>
-                            <MenuLink to="/order-history/">
+                            </ProdButton>
+                            <MenuLink to="/order-history/" onClick={isExpanded ? handleToggle : ""}>
                                 <Menu>About</Menu>
                             </MenuLink>
                         </Left>
@@ -87,6 +107,13 @@ const Navbar = () => {
                 </Right>
 
             </Wrapper>
+            <Expand ref={parentRef} style={{height: isExpanded ? "400px" : "0"}} onTransitionEnd={handleTransitionEnd}>
+                <ProductMenu ref={childRef} style={{display: "none"}} onMouseLeave={handleToggle}>
+                    <MenuLink to="/products/">
+                        <button style={{margin: '100px'}}>TEMP PRODUCTS BUTTON</button>
+                    </MenuLink>
+                </ProductMenu>
+            </Expand>
         </Container>
     )
 }

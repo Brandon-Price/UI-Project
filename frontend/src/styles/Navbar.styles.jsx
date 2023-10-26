@@ -9,10 +9,10 @@ export const COLORS = {
 };
 
 export const Container = styled.nav`
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 999;
-    height: 10%;
+    height: 59px;
     width: 100%;
     background-color: ${COLORS.main};
     filter: drop-shadow(black 1px 1px 5px);
@@ -35,6 +35,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: ${COLORS.main};
     ${mobile({padding: "10px 0px"})}
 `
 
@@ -43,6 +44,7 @@ export const Left = styled.div`
     display: flex;
     align-items: center;
     padding: 0px 11px;
+    background-color: ${COLORS.main};
 `
 
 export const SearchContainer = styled.div`
@@ -100,7 +102,19 @@ export const MenuLink = styled(Link)`
     color: ${COLORS.text};
     text-decoration: none;
 
-    &:hover, &:focus{
+    &:hover {
+        text-decoration: underline;
+        transform: scale(1.03);
+    }
+`
+
+export const ProdButton = styled.button`
+    color: ${COLORS.text};
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
         text-decoration: underline;
         transform: scale(1.03);
     }
@@ -136,4 +150,16 @@ export const Button = styled.button`
     font-size: 12px;
     background-color: transparent;
     cursor: pointer;
+`
+
+export const Expand = styled.div`
+    position: relative;
+    z-index: 999;
+    transition: height 0.15s ease;
+    background-color: color-mix(in srgb, ${COLORS.main} 90%, white);
+`
+
+export const ProductMenu = styled.div`
+    height: 400px;
+    width: auto;
 `

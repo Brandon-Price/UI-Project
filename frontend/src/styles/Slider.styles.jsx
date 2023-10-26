@@ -9,6 +9,8 @@ export const Container = styled.div`
     text-align: center;
     justify-content: top;
     height: auto;
+    position: relative;
+    z-index: 1;
 `
 
 export const Arrow = styled.div`
@@ -53,6 +55,8 @@ export const ImageContainer = styled.div`
     background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/22/10/istock-683044558.jpg");
     background-size: cover;
     filter: drop-shadow(black 1px 1px 5px);
+    position: relative;
+    z-index: 1;
 `
 
 export const InfoContainer = styled.div`
@@ -62,6 +66,8 @@ export const InfoContainer = styled.div`
     padding: 10px;
     text-align: left;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 `
 
 export const Title = styled.h1`
