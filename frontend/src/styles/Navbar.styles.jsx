@@ -9,10 +9,10 @@ export const COLORS = {
 };
 
 export const Container = styled.nav`
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 999;
-    height: 59px;
+    height: 10%;
     width: 100%;
     background-color: ${COLORS.main};
     filter: drop-shadow(black 1px 1px 5px);

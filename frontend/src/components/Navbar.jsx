@@ -75,7 +75,7 @@ const Navbar = ({page}) => {
                             <ProdButton onClick={handleToggle}>
                                 <Menu style={{textDecoration: page === 'prod' ? 'underline' : 'none'}}>Products</Menu>
                             </ProdButton>
-                            <MenuLink to="/order-history/" onClick={isExpanded ? handleToggle : ""}>
+                            <MenuLink to="/about" onClick={isExpanded ? handleToggle : ""}>
                                 <Menu style={{textDecoration: page === 'about' ? 'underline' : 'none'}}>About</Menu>
                             </MenuLink>
                         </Left>
@@ -113,16 +113,16 @@ const Navbar = ({page}) => {
                         <MenuLink to="/products/">
                             <MenuButtons>All Products</MenuButtons>
                         </MenuLink>
-                        <MenuLink to="/products/">
+                        <MenuLink to="/store-picks">
                             <MenuButtons>Store Picks</MenuButtons>
                         </MenuLink>
-                        <MenuLink to="/products/">
+                        <MenuLink to="/best-sellers">
                             <MenuButtons>Best Sellers</MenuButtons>
                         </MenuLink>
-                        <MenuLink to="/products/">
+                        <MenuLink to="/in-season">
                             <MenuButtons>In-Season</MenuButtons>
                         </MenuLink>
-                        <MenuLink to="/products/">
+                        <MenuLink to="/exotic-fruits">
                             <MenuButtons>Exotic Fruits</MenuButtons>
                         </MenuLink>
                     </MenuContainer>

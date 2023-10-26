@@ -1,20 +1,23 @@
 import React from 'react';
-import SubHeader from '../components/SubHeader';
+import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+const Container = styled.div`
+
+`
 
 // Creating an faq page that has generic help, doesn't have to be dynamic just have
 // something to show, look up some other faq pages to see what they have and replicate
-const Help = () => {
+const About = () => {
     return(
-        <div>
+        <Container>
             <Navbar/>
-            <SubHeader/>
+                About Page
             <Footer/>
-        </div>
+        </Container>
     )
 }
 
 
-export default Help
+export default About
