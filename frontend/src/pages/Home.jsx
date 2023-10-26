@@ -7,9 +7,11 @@ import Footer from '../components/Footer';
 // Create a new type of slider item to make the front page look better
 // Maybe something like a carousel with items from our site, doesn't have to be dynamic
 const Home = () => {
+    const page = 'home';
+
     return (
         <div>
-            <Navbar/>
+            <Navbar page={page}/>
             <Slider />
             <Footer/>
         </div>

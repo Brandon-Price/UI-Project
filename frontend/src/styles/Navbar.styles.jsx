@@ -152,6 +152,7 @@ export const Button = styled.button`
     cursor: pointer;
 `
 
+/* added for colapsable products menu */
 export const Expand = styled.div`
     position: relative;
     z-index: 999;
@@ -160,6 +161,25 @@ export const Expand = styled.div`
 `
 
 export const ProductMenu = styled.div`
-    height: 400px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1%;
+    height: 450px;
     width: auto;
+`
+
+export const MenuContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    padding-left: 3vw;
+    height: 90%;
+    width: 25%;
+    border-right: 2px solid white;
+`
+
+export const MenuButtons = styled.div`
+    font-weight: bold;
+    font-size: 200%;
 `

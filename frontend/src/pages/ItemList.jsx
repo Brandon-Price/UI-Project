@@ -13,6 +13,7 @@ const ItemList = ({user, setUser}) => {
     const cat = location.pathname.split("/")[2];
     const [filters, setFilter] = useState({});
     const [sort, setSort] = useState("Price Ascending");
+    const page = 'prod';
 
     const handleFilter = (e) => {
         const value = e.target.value;
@@ -24,7 +25,7 @@ const ItemList = ({user, setUser}) => {
 
     return(
         <Container>
-            <Navbar user={user}/>
+            <Navbar user={user} page={page}/>
             <FilterContainer>
                 <Filter>
                     <FilterText>Product Sort:</FilterText>
