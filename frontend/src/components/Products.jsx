@@ -3,7 +3,7 @@ import Product from "./Product";
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput } from "../styles/Products.styles";
+import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput, Skeleton, SkeleCon } from "../styles/Products.styles";
 
 
 // Focuses on handling and organzing the product display page
@@ -16,6 +16,7 @@ const Container = styled.div`
     margin-right: 15px;
     justify-content: space-between;
     overflow:hidden;
+    width: 80%;
     max-width: 1920px;
     border-top: 2px solid #d4d4d4;
     border-bottom: 2px solid #d4d4d4;
@@ -113,13 +114,21 @@ const Products = ({cat, filters, sort}) => {
           </FilterShelf>
         </FilterShelfContainer>
         <Container>
-          {filters
-              ? filterSelect.filter(filterSelect => filterSelect.title.toLowerCase()
-              .includes(searchFilter.toLowerCase()))
+        {products.length > 0 ? (
+          filters
+          ? filterSelect.filter(filterSelect => filterSelect.title.toLowerCase()
+          .includes(searchFilter.toLowerCase()))
+          .map((item) => <Product item={item} key={item._id} />)
+          : products.filter(filterSelect => filterSelect.title.toLowerCase()
+          .includes(searchFilter.toLowerCase()))
               .map((item) => <Product item={item} key={item._id} />)
-              : products.filter(filterSelect => filterSelect.title.toLowerCase()
-              .includes(searchFilter.toLowerCase()))
-                  .map((item) => <Product item={item} key={item._id} />)}
+        ) : (
+          Array.from({ length: 50}).map((_, index) => (
+            <SkeleCon>
+              <Skeleton></Skeleton>
+            </SkeleCon>
+          ))
+        )}
         </Container>
       </Wrapper>
     )

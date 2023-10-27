@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { sliderItems, bestSellers } from "../data";
-import {Container, ImageContainer, InfoContainer, Title, Description, Button, BottomSlide, SubTitle, BottomInfo, ProductContainer, ProductImage, ProductNameContainer} from "../styles/Slider.styles.jsx";
+import {Container, ImageContainer, InfoContainer, Title, Description, Button, BottomSlide, SubTitle, BottomInfo, ProductContainer, ProductImage, ProductNameContainer, Skeleton} from "../styles/Slider.styles.jsx";
 import {
     BrowserRouter as Router,
     Route,
@@ -68,46 +68,70 @@ const Slider = () => {
                 <SubTitle>Some of our Best Sellers</SubTitle>
             </BottomSlide>
             <BottomInfo>
-                {best.map(item=>(
-                    <Link to={`/products/${item._id}`}>
-                        <ProductContainer>
-                            <ProductImage src={item.img}></ProductImage>
-                            <ProductNameContainer>
-                                <h2>{item.title.split(',')[0]}</h2>
-                            </ProductNameContainer>
+                {best.length > 0 ? (
+                    best.map(item=>(
+                        <Link to={`/products/${item._id}`}>
+                            <ProductContainer>
+                                <ProductImage src={item.img}></ProductImage>
+                                <ProductNameContainer>
+                                    <h2>{item.title.split(',')[0]}</h2>
+                                </ProductNameContainer>
+                            </ProductContainer>
+                        </Link>
+                    ))
+                ) : (
+                    Array.from({ length: 3 }).map((_, index) => (
+                        <ProductContainer key={index}>
+                          <Skeleton></Skeleton>
                         </ProductContainer>
-                    </Link>
-                ))}
+                      ))
+                )}
             </BottomInfo>
             <BottomSlide>
                 <SubTitle>Store Picks</SubTitle>
             </BottomSlide>
             <BottomInfo>
-                {picks.map(item=>(
-                    <Link to={`/products/${item._id}`}>
-                        <ProductContainer>
-                            <ProductImage src={item.img}></ProductImage>
-                            <ProductNameContainer>
-                                <h2>{item.title.split(',')[0]}</h2>
-                            </ProductNameContainer>
+                {picks.length > 0 ? (
+                    picks.map(item=>(
+                        <Link to={`/products/${item._id}`}>
+                            <ProductContainer>
+                                <ProductImage src={item.img}></ProductImage>
+                                <ProductNameContainer>
+                                    <h2>{item.title.split(',')[0]}</h2>
+                                </ProductNameContainer>
+                            </ProductContainer>
+                        </Link>
+                    ))
+                ) : (
+                    Array.from({ length: 3 }).map((_, index) => (
+                        <ProductContainer key={index}>
+                          <Skeleton></Skeleton>
                         </ProductContainer>
-                    </Link>
-                ))}
+                      ))
+                )}
             </BottomInfo>
             <BottomSlide>
                 <SubTitle>Some of our Exotic Selection</SubTitle>
             </BottomSlide>
             <BottomInfo>
-                {exotic.map(item=>(
-                    <Link to={`/products/${item._id}`}>
-                        <ProductContainer>
-                            <ProductImage src={item.img}></ProductImage>
-                            <ProductNameContainer>
-                                <h2>{item.title.split(',')[0]}</h2>
-                            </ProductNameContainer>
+                {exotic.length > 0 ? (
+                    exotic.map(item=>(
+                        <Link to={`/products/${item._id}`}>
+                            <ProductContainer>
+                                <ProductImage src={item.img}></ProductImage>
+                                <ProductNameContainer>
+                                    <h2>{item.title.split(',')[0]}</h2>
+                                </ProductNameContainer>
+                            </ProductContainer>
+                        </Link>
+                    ))
+                ) : (
+                    Array.from({ length: 3 }).map((_, index) => (
+                        <ProductContainer key={index}>
+                          <Skeleton></Skeleton>
                         </ProductContainer>
-                    </Link>
-                ))}
+                      ))
+                )}
             </BottomInfo>
         </Container>
     );

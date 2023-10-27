@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { COLORS } from "./Navbar.styles"
 
 /* Added for filter shelf */
@@ -46,3 +46,21 @@ export const FilterName = styled.label`
 export const PriceInput = {
     width: "75px",
 };
+
+/* skeleton loading */
+const loading = keyframes`
+    to {background-position-x: 20vw;}
+`
+
+export const Skeleton = styled.div`
+    height: calc(20vw + 50px);
+    width: 20vw;
+    max-height: 300px;
+    max-width: 250px;
+    background: linear-gradient(to right, #e0e0e0 8%, #ececec 18%, #e0e0e0 33%);
+    animation: 1s ${loading} linear infinite;
+`
+
+export const SkeleCon = styled.div`
+    margin: 10px;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {COLORS} from "./Navbar.styles.jsx";
 
 export const Container = styled.div`
@@ -170,4 +170,18 @@ export const ProductNameContainer = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+`
+
+/* skeleton loading */
+const loading = keyframes`
+    to {background-position-x: 20vw;}
+`
+
+export const Skeleton = styled.div`
+    height: calc(20vw + 50px);
+    width: 20vw;
+    max-height: 400px;
+    max-width: 400px;
+    background: linear-gradient(to right, #e0e0e0 8%, #ececec 18%, #e0e0e0 33%);
+    animation: 1s ${loading} linear infinite;
 `
