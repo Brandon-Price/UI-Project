@@ -24,7 +24,7 @@ const ItemList = ({user, setUser}) => {
     };
 
     return(
-        <Container>
+        <Container style={{ marginTop: "61px" }}>
             <Navbar user={user} page={page}/>
             <FilterContainer>
                 <Filter>

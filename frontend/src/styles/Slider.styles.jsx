@@ -11,7 +11,7 @@ export const Container = styled.div`
     height: auto;
     position: relative;
     z-index: 1;
-    margin-top: 59px;
+    margin-top: 61px;
 `
 
 export const Arrow = styled.div`
