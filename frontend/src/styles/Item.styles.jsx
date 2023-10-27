@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-
+    margin-top: 61px;
 `
 
 export const Wrapper = styled.div`

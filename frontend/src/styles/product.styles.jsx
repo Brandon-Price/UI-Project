@@ -68,6 +68,7 @@ export const IconButton = styled.button`
     justify-content: center;
     margin: 10px;
     transition: all .5s ease;
+    cursor: pointer;
 
     &:hover{
         background-color: #c04547;

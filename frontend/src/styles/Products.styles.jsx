@@ -49,7 +49,7 @@ export const PriceInput = {
 
 /* skeleton loading */
 const loading = keyframes`
-    to {background-position-x: 20vw;}
+    to {background-position-x: 15vw;}
 `
 
 export const Skeleton = styled.div`
