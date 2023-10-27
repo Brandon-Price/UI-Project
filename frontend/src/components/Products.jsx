@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Product from "./Product";
-//import { products } from "../data";
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
