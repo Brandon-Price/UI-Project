@@ -11,6 +11,7 @@ export const Container = styled.div`
     height: auto;
     position: relative;
     z-index: 1;
+    margin-top: 59px;
 `
 
 export const Arrow = styled.div`
@@ -54,6 +55,7 @@ export const ImageContainer = styled.div`
     vertical-align: middle;
     background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/22/10/istock-683044558.jpg");
     background-size: cover;
+    background-position: right bottom;
     filter: drop-shadow(black 1px 1px 5px);
     position: relative;
     z-index: 1;
