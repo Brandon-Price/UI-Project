@@ -101,35 +101,12 @@ const Products = ({cat, filters, sort}) => {
             <FilterName>
               <input type="checkbox"/> Tropical
             </FilterName><br></br>
-            <FilterType>Weight</FilterType>
-            <FilterName>
-              <input type="checkbox"/> Small
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Medium
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Large
-            </FilterName><br></br>
             <FilterType>Price</FilterType>
             <FilterName>
               $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
             </FilterName>
             <FilterName>
               $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MAX"/>
-            </FilterName>
-            <FilterType>MISC</FilterType>
-            <FilterName>
-              <input type="checkbox"/> Store Picks
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Best Sellers
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> In-Season
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> On Sale
             </FilterName>
           </FilterShelf>
         </FilterShelfContainer>

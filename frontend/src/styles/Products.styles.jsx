@@ -7,7 +7,6 @@ export const FilterShelfContainer = styled.div`
     height: 750px;
     margin-left: 3vw;
     background-color: white;
-    filter: drop-shadow(#aaaaaa 1px 1px 5px);
 `
 
 export const FilterLabelContainer = styled.div`
