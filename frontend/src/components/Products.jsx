@@ -84,19 +84,22 @@ const Products = ({cat, filters, sort}) => {
           <FilterShelf>
             <FilterType>Fruit Type</FilterType>
             <FilterName>
-              <input type="checkbox"/> Berries
+              <input type="checkbox"/> Plums
             </FilterName>
             <FilterName>
-              <input type="checkbox"/> Pits
+              <input type="checkbox"/> Apple
             </FilterName>
             <FilterName>
-              <input type="checkbox"/> Cores
+              <input type="checkbox"/> Peaches
+            </FilterName>
+            <FilterName>
+              <input type="checkbox"/> Pears
             </FilterName>
             <FilterName>
               <input type="checkbox"/> Citrus
             </FilterName>
             <FilterName>
-              <input type="checkbox"/> Melons
+              <input type="checkbox"/> Melon
             </FilterName>
             <FilterName>
               <input type="checkbox"/> Tropical
