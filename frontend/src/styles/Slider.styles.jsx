@@ -140,7 +140,7 @@ export const ProductContainer = styled.div`
     margin: 20px;
     margin-top: 50px;
     float: left;
-    height: calc(20vw + 50px);
+    height: calc(20vw + 80px);
     width: 20vw;
     max-height: 400px;
     max-width: 400px;
@@ -165,7 +165,8 @@ export const ProductImage = styled.img`
 
 export const ProductNameContainer = styled.div`
     display: flex;
-    height: 45px;
+    flex-direction: column;
+    height: 75px;
     color: white;
     color: ${COLORS.text};
     background-color: ${COLORS.sub};

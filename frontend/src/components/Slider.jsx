@@ -75,6 +75,7 @@ const Slider = () => {
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2>{item.title.split(',')[0]}</h2>
+                                    <h2 style={{marginTop: "0px", fontFamily: "Courier New"}}>${item.price}</h2>
                                 </ProductNameContainer>
                             </ProductContainer>
                         </Link>
@@ -98,6 +99,7 @@ const Slider = () => {
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2>{item.title.split(',')[0]}</h2>
+                                    <h2 style={{marginTop: "0px", fontFamily: "Courier New"}}>${item.price}</h2>
                                 </ProductNameContainer>
                             </ProductContainer>
                         </Link>
@@ -121,6 +123,7 @@ const Slider = () => {
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2>{item.title.split(',')[0]}</h2>
+                                    <h2 style={{marginTop: "0px", fontFamily: "Courier New"}}>${item.price}</h2>
                                 </ProductNameContainer>
                             </ProductContainer>
                         </Link>
