@@ -16,6 +16,30 @@ export const Info = styled.div`
     justify-content: center;
 `
 
+/* Added for item info */
+export const ProdInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background-color: ${COLORS.sub};
+    width: 250px;
+    height: auto;
+`
+
+export const Name = styled.label`
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: 5px;
+`
+
+export const Price = {
+    marginBottom: "10px",
+    marginTop: "0px",
+    fontFamily: "Courier New",
+};
+
 export const Container = styled.div`
     flex: 1;
     flex-direction: column;
@@ -26,7 +50,11 @@ export const Container = styled.div`
     position: relative;
     filter: drop-shadow(#aaaaaa 1px 1px 3px);
 
-    &:hover ${Info}{
+    &:hover ${ProdInfo} {
+        background-color: color-mix(in srgb, ${COLORS.sub} 70%, black);
+    }
+
+    &:hover ${Info} {
         opacity: 1;
     }
 `
@@ -76,27 +104,3 @@ export const IconButton = styled.button`
         transform: scale(1.2);
     }
 `
-
-/* Added for item info */
-export const ProdInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    background-color: ${COLORS.sub};
-    width: 250px;
-    height: auto;
-`
-
-export const Name = styled.label`
-    font-weight: bold;
-    margin: 10px;
-    margin-bottom: 5px;
-`
-
-export const Price = {
-    marginBottom: "10px",
-    marginTop: "0px",
-    fontFamily: "Courier New",
-};
