@@ -9,12 +9,13 @@ const Container = styled.div`
 `
 
 const StorePicks = () => {
+    const page = "prod";
     const pageName = "Store Picks";
     const imgUrl = "https://domf5oio6qrcr.cloudfront.net/medialibrary/11499/3b360279-8b43-40f3-9b11-604749128187.jpg";
 
     return(
         <Container>
-            <Navbar/>
+            <Navbar page={page}/>
                 <MenuPage imgUrl={imgUrl} pageName={pageName}/>
             <Footer/>
         </Container>

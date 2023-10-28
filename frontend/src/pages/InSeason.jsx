@@ -9,12 +9,13 @@ const Container = styled.div`
 `
 
 const InSeason = () => {
+    const page = "prod";
     const pageName = "In-Season";
     const imgUrl = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/autumn-concept-with-seasonal-fruits-and-vegetables-royalty-free-image-1569951867.jpg";
 
     return(
         <Container>
-            <Navbar/>
+            <Navbar page={page}/>
                 <MenuPage pageName={pageName} imgUrl={imgUrl}/>
             <Footer/>
         </Container>

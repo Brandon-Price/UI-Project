@@ -9,12 +9,13 @@ const Container = styled.div`
 `
 
 const BestSellers = () => {
+    const page = "prod";
     const pageName = "Best Sellers";
     const imgUrl = "https://wardsgainesville.com/wp-content/uploads/2017/09/Picture1.jpg";
 
     return(
         <Container>
-            <Navbar/>
+            <Navbar page={page}/>
                 <MenuPage imgUrl={imgUrl} pageName={pageName}/>
             <Footer/>
         </Container>
