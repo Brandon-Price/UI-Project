@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import SubHeader from "../components/SubHeader";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import {Container, FilterContainer, Filter, FilterText, Select, Option, EmptyContainer} from "../styles/ItemList.styles";

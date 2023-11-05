@@ -129,7 +129,7 @@ const Products = ({cat, filters, sort}) => {
           .includes(searchFilter.toLowerCase()))
               .map((item) => <Product item={item} key={item._id} />)
         ) : (
-          Array.from({ length: 50}).map((_, index) => (
+          Array.from({ length: 50 }).map((_, index) => (
             <SkeleCon>
               <Skeleton></Skeleton>
             </SkeleCon>
