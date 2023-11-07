@@ -78,7 +78,7 @@ const Navbar = ({page}) => {
                                 <Menu aria-label={"Press Enter for Product Page Options"} style={{textDecoration: page === 'prod' ? 'underline' : 'none'}}>Products</Menu>
                             </ProdButton>
                             <MenuLink to="/about" onClick={isExpanded ? handleToggle : ""}>
-                                <Menu aria-label={"About Page Link"} style={{textDecoration: page === 'about' ? 'underline' : 'none'}}>About</Menu>
+                                <Menu aria-hidden="true" style={{textDecoration: page === 'about' ? 'underline' : 'none'}}>About</Menu>
                             </MenuLink>
                         </Left>
                     </Wrapper>
