@@ -47,13 +47,13 @@ const SignUpSignIn = () => {
                 <LeftContainer>
                     <Title>Create an Account</Title>
                     <Form>
-                        <Input placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
-                        <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-                        <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
-                        <Input placeholder="Confirm Password" type="password" onChange={(e) => handleConfirmPassword(e.target.value)}/>
+                        <Input aria-label={"Sign Up - Username"} aria-required="true" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
+                        <Input aria-label={"Sign Up - Email"} aria-required="true" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                        <Input aria-label={"Sign Up - Password"} aria-required="true" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
+                        <Input aria-label={"Confirm Sign Up Password"} aria-required="true" placeholder="Confirm Password" type="password" onChange={(e) => handleConfirmPassword(e.target.value)}/>
                         {passwordMatchError && <Error>Passwords do not match</Error>}
                         {error && <Error>Error has occurred</Error>}
-                        <Button onClick={handleRegister} disabled={isFetchingReg}>Create Account</Button>
+                        <Button aria-label={"Create Account Button"} onClick={handleRegister} disabled={isFetchingReg}>Create Account</Button>
                     </Form>
                 </LeftContainer>
             </Wrapper>
@@ -63,10 +63,10 @@ const SignUpSignIn = () => {
             <RightContainer>
                     <Title>Already have an account?</Title>
                     <Form>
-                        <Input placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
-                        <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
+                        <Input aria-label={"Log In - Username"} aria-required="true" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
+                        <Input aria-label={"Log In - Password"} aria-required="true" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                         {error && <Error>Error has occurred</Error>}
-                        <Button onClick={handleSignIn} disabled={isFetching}>Sign In</Button>
+                        <Button aria-label={"Log In Button"} onClick={handleSignIn} disabled={isFetching}>Sign In</Button>
                     </Form>
                 </RightContainer>
             </Wrapper>

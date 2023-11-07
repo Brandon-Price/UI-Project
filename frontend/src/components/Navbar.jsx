@@ -72,13 +72,13 @@ const Navbar = ({page}) => {
                     <Wrapper>
                         <Left>
                             <MenuLink to="/" onClick={isExpanded ? handleToggle : ""}>
-                                <Menu style={{textDecoration: page === 'home' ? 'underline' : 'none'}}>Home</Menu>
+                                <Menu aria-label={"Home Page Link"} style={{textDecoration: page === 'home' ? 'underline' : 'none'}}>Home</Menu>
                             </MenuLink>
                             <ProdButton onClick={handleToggle}>
-                                <Menu style={{textDecoration: page === 'prod' ? 'underline' : 'none'}}>Products</Menu>
+                                <Menu aria-label={"Press Enter for Product Page Options"} style={{textDecoration: page === 'prod' ? 'underline' : 'none'}}>Products</Menu>
                             </ProdButton>
                             <MenuLink to="/about" onClick={isExpanded ? handleToggle : ""}>
-                                <Menu style={{textDecoration: page === 'about' ? 'underline' : 'none'}}>About</Menu>
+                                <Menu aria-label={"About Page Link"} style={{textDecoration: page === 'about' ? 'underline' : 'none'}}>About</Menu>
                             </MenuLink>
                         </Left>
                     </Wrapper>
@@ -88,19 +88,19 @@ const Navbar = ({page}) => {
                     <SearchContainer>
                         <Search style ={{color: "gray", fontSize:20}}/>
                         <Line/>
-                        <Input placeholder = "Search" onKeyDown={(e) => handleSearch(e)}/>
+                        <Input aria-label={"Search bar, to search type your item and press enter"} placeholder = "Search" onKeyDown={(e) => handleSearch(e)}/>
                         <Close style={{color:"gray"}} onClick={() => dispatch(updateFilter(""))}></Close>
                     </SearchContainer>
                 </Center>
                 <Right>
-                    {user ? (<Menu><Title style={{cursor: "default", color:"white"}}>Hello {user.username}</Title><ExitToApp style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
+                    {user ? (<Menu><Title style={{cursor: "default", color:"white"}}>Hello {user.username}</Title><ExitToApp aria-label={"Logout"} style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
                         <Menu>Login</Menu>
                     </MenuLink>)}
                     <Menu>
                         <MenuLink to="/cart">
                             <CartAnim>
-                                <Badge badgeContent={cartItems} color = "primary" overlap="rectangular" style={{ padding: '1px' }}>
-                                    <LocalMallOutlined/>
+                                <Badge aria-label={"Cart Page Link"} badgeContent={cartItems} color = "primary" overlap="rectangular" style={{ padding: '1px' }}>
+                                    <LocalMallOutlined aria-label={"Cart Page Link"}/>
                                 </Badge>
                             </CartAnim>
                         </MenuLink>
@@ -111,19 +111,19 @@ const Navbar = ({page}) => {
                 <ProductMenu ref={childRef} style={{display: "none"}} onMouseLeave={handleToggle}>
                     <MenuContainer>
                         <MenuLink to="/products/">
-                            <MenuButtons>All Products</MenuButtons>
+                            <MenuButtons aria-label={"All Products Page Link"}>All Products</MenuButtons>
                         </MenuLink>
                         <MenuLink to="/store-picks">
-                            <MenuButtons>Store Picks</MenuButtons>
+                            <MenuButtons aria-label={"Store Picks Page Link"}>Store Picks</MenuButtons>
                         </MenuLink>
                         <MenuLink to="/best-sellers">
-                            <MenuButtons>Best Sellers</MenuButtons>
+                            <MenuButtons aria-label={"Best Sellers Page Link"}>Best Sellers</MenuButtons>
                         </MenuLink>
                         <MenuLink to="/in-season">
-                            <MenuButtons>In-Season</MenuButtons>
+                            <MenuButtons aria-label={"In-Season Page Link"}>In-Season</MenuButtons>
                         </MenuLink>
                         <MenuLink to="/exotic-fruits">
-                            <MenuButtons>Exotic Fruits</MenuButtons>
+                            <MenuButtons aria-label={"Exotic Fruits Page Link"}>Exotic Fruits</MenuButtons>
                         </MenuLink>
                     </MenuContainer>
                 </ProductMenu>

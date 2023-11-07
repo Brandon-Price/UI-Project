@@ -39,7 +39,7 @@ const MenuPage = ({imgUrl, pageName}) => {
             <FruitContainer>
                 {fruits.length > 0 ? (
                     fruits.map(item => (
-                        <Product item={item} key={item.id}/>
+                        <Product aria-label={item} item={item} key={item.id}/>
                     ))
                 ) : (
                     Array.from({ length: 21}).map((_, index) => (

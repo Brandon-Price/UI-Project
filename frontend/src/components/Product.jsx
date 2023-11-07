@@ -9,14 +9,14 @@ const Product = ({item}) => {
     return (
         <Container>
             <Image src={item.img}/>
-            <Info>
+            <Info aria-label={item.title + " link"}>
                 <Link to={`/products/${item._id}`}>
                     <IconButton>
                         <SearchOutlined/>
                     </IconButton>
                 </Link>
             </Info>
-            <ProdInfo>
+            <ProdInfo aria-label={item.title + " link"}>
                 <Name>{item.title.split(',')[0]}</Name>
                 <Name style={Price}>${item.price}</Name>
             </ProdInfo>

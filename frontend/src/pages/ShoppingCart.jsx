@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import SubHeader from "../components/SubHeader";
 import Footer from "../components/Footer";
 import { DeleteOutline } from "@material-ui/icons";
 import {Container, Wrapper, Top, TopTexts, TopText, Title, Bottom, Info, Product, ProductInfo, Image,

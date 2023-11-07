@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import SubHeader from "../components/SubHeader";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import { Add, Remove } from "@material-ui/icons";
