@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import {Container, FilterContainer, Filter, FilterText, Select, Option, EmptyContainer} from "../styles/ItemList.styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Will be handling the item filters and their containers
@@ -21,6 +21,10 @@ const ItemList = ({user, setUser}) => {
             [e.target.name]: value,
         });
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return(
         <Container style={{ marginTop: "61px" }}>
