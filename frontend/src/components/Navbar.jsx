@@ -65,9 +65,7 @@ const Navbar = ({page}) => {
         <Container>
             <Wrapper>
                 <Left>
-                <MenuLink to="/">
-                    <Logo>TBD</Logo>
-                </MenuLink>
+                <Logo style={{color:"white"}}>TBD</Logo>
                 <SubCon>
                     <Wrapper>
                         <Left>
