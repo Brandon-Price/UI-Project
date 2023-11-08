@@ -68,17 +68,6 @@ const Products = ({cat, filters, sort}) => {
             [...prev].sort((a, b) => b.price - a.price)
           );
         }
-        // Add some sort of way to look at only the ints in the string
-        // else if (sort === "weightDesc"){
-        //   setFilters((prev) =>
-        //     [...prev].sort((a, b) => b.pricePerWeight - a.pricePerWeight)
-        //   );
-        // }
-        // else if (sort === "weightAsc"){
-        //   setFilters((prev) =>
-        //     [...prev].sort((a, b) => a.pricePerWeight - b.pricePerWeight)
-        //   );
-        // }
       }, [sort]);
 
     return (

@@ -15,7 +15,7 @@ export const Container = styled.nav`
     height: 59px;
     width: 100%;
     background-color: ${COLORS.main};
-    filter: drop-shadow(black 1px 1px 5px);
+    
     ${mobile({height: "50px"})}
 `
 

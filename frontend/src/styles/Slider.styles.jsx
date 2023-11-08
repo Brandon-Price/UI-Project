@@ -58,7 +58,7 @@ export const TC = styled.div`
     position: relative;
     z-index: 1;
 
-    padding: 20px;
+    padding: 40px;
     padding-left: 0;
     padding-right: 0;
 `
@@ -70,8 +70,7 @@ export const ImageContainer = styled.div`
     vertical-align: middle;
     background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/22/10/istock-683044558.jpg");
     background-size: cover;
-    background-position: right bottom;
-    filter: drop-shadow(black 1px 1px 5px);
+    background-position: right bottom;    
 
     border-radius: 50px;
     margin-left: 20px;
@@ -86,7 +85,8 @@ export const InfoContainer = styled.div`
 `
 
 export const Title = styled.h1`
-    font-size: 70px;
+    margin: 15px;
+    font-size: 55px;
     color: ${COLORS.sub};
 `
 
@@ -175,7 +175,7 @@ export const ProductContainer = styled.div`
     width: 20vw;
     max-height: 475px;
     max-width: 400px;
-    filter: drop-shadow(gray 1px 1px 5px);
+    
     transition-duration: 0.15s;
     cursor: pointer;
 
