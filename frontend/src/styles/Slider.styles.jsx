@@ -181,7 +181,7 @@ export const ProductContainer = styled.div`
 
     &:hover {
         transform: scale(1.005);
-        filter: drop-shadow(gray 1px 1px 10px);
+        filter: drop-shadow(lightgray 1px 1px 10px);
     }
 `
 
