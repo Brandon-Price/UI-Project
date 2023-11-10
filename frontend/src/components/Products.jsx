@@ -85,6 +85,14 @@ const Products = ({cat, filters, priceFilter, sort}) => {
           setFilteredProds((prev) =>
             [...prev].sort((a, b) => a.weight - b.weight)
           );
+        } else if (sort === "aTOz"){
+          setFilteredProds((prev) =>
+            [...prev].sort((a, b) => a.title.localeCompare(b.title))
+          );
+        } else if (sort === "zTOa"){
+          setFilteredProds((prev) =>
+            [...prev].sort((a, b) => b.title.localeCompare(a.title))
+          );
         }
 
       }, [sort]);

@@ -87,6 +87,8 @@ const ItemList = ({user, setUser}) => {
                         <Option value="descending">Price Descending</Option>
                         <Option value="weightAscending">Weight Ascending</Option>
                         <Option value="weightDescending">Weight Descending</Option>
+                        <Option value="aTOz">A - Z Sort</Option>
+                        <Option value="zTOa">Z - A Sort</Option>
                     </Select>
                 </Filter>
             </FilterContainer>
