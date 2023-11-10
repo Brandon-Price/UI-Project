@@ -10,13 +10,12 @@ export const Container = styled.div`
 `
 
 export const Image = styled.div`
-    background-image: url(https://wallpapers.com/images/hd/yellow-lemons-on-white-surface-1syovlf55x9ng3f7.jpg);
+    background-image: url(https://cdn.wallpapersafari.com/2/25/RxB3py.jpg);
     background-size: fit;
     background-position: center;
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: blur(3px);
 `
 
 export const Line = styled.div`
@@ -38,11 +37,17 @@ export const RightContainer = styled.div`
 
 export const Wrapper = styled.div`
     width: 300px;
+    height: 380px;
     padding: 20px;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 black;
+    backdrop-filter: blur(8.5px);
     border-radius: 10px;
+    color: white;
     position: relative;
-    filter: drop-shadow(0 0 0.75rem lightgray);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 `
 
 export const Title = styled.h1`
@@ -56,12 +61,32 @@ export const Form = styled.form`
     display: row;
     margin: 7px 4px 0px 0px;
     padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 `
 
 export const Input = styled.input`
     flex: 1;
     margin: 2px;
-    min-width: 40%;
+    width: 150%;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 black;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    height: 3rem;
+
+    &:focus {
+        display: inline-block;
+        box-shadow: 0 0 0 0.2rem white;
+        backdrop-filter: blur(12rem)
+        border-radius: 2rem;
+    }
 `
 
 export const SocialContainer = styled.div`
@@ -80,7 +105,8 @@ export const SocialIcon = styled.div`
 `
 
 export const Button = styled.button`
-    padding: 8px;
+    padding: 9px;
+    margin: 12px;
     font-size: 13px;
     background-color: white;
     border-color: #dd7973;
