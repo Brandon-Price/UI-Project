@@ -118,7 +118,7 @@ const Slider = () => {
                 )}
             </BottomInfo>
             <BottomSlide>
-                <SubTitle>Some of our Exotic Selection</SubTitle>
+                <SubTitle>Some of our Exotic Selections</SubTitle>
                 <Link to="/exotic-fruits" style={{textDecoration: "none"}}>
                     <ShopAll>Shop All</ShopAll>
                 </Link>
