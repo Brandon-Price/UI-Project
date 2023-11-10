@@ -16,7 +16,7 @@ export const Image = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: blur(0px);
+    filter: blur(3px);
 `
 
 export const Line = styled.div`
