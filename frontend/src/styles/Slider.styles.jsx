@@ -104,11 +104,15 @@ export const Button = styled.button`
     cursor: pointer;
     color: ${COLORS.text};
     background-color: ${COLORS.sub};
-    border-color: transparent;
+    border: 2px solid transparent;
     border-radius: 5px;
+    transition: 0.15s;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
+        border-color: ${COLORS.sub};
+        background-color: ${COLORS.text};
+        color: ${COLORS.sub};
     }
 `
 
