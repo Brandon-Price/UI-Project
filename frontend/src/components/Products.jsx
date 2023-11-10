@@ -77,7 +77,16 @@ const Products = ({cat, filters, priceFilter, sort}) => {
           setFilteredProds((prev) =>
             [...prev].sort((a, b) => b.price - a.price)
           );
+        } else if (sort === "weightDescending"){
+          setFilteredProds((prev) =>
+            [...prev].sort((a, b) => b.weight - a.weight)
+          );
+        } else if (sort === "weightAscending"){
+          setFilteredProds((prev) =>
+            [...prev].sort((a, b) => a.weight - b.weight)
+          );
         }
+
       }, [sort]);
 
     return (
