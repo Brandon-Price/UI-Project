@@ -6,7 +6,7 @@ const ProductSchema = new mongoose.Schema(
         desc:{type: String, required:true},
         img:{type: String, required: true},
         pricePerWeight:{type: String, required: true},
-        weight:{type: String, required: true},
+        weight:{type: Number, required: true},
         categories:{type: String, required: true},
         isExotic:{type: Boolean, default: false},
         isBestSeller:{type: Boolean, default: false},
