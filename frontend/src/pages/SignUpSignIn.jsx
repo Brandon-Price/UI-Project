@@ -52,7 +52,7 @@ const SignUpSignIn = () => {
                         <Input aria-label={"Sign Up - Password"} aria-required="true" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                         <Input aria-label={"Confirm Sign Up Password"} aria-required="true" placeholder="Confirm Password" type="password" onChange={(e) => handleConfirmPassword(e.target.value)}/>
                         {passwordMatchError && <Error>Passwords do not match</Error>}
-                        {error && <Error>Error has occurred</Error>}
+                        {error2 && <Error>Error has occurred</Error>}
                         <Button aria-label={"Create Account Button"} onClick={handleRegister} disabled={isFetchingReg}>Create Account</Button>
                     </Form>
                 </LeftContainer>
