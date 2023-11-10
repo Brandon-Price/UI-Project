@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 const Products = ({cat, filters, sort}) => {
     const [products, setProducts] = useState([]);
-    const [filterSelect, setFilters] = useState([]);
+    const [filteredProds, setFilteredProds] = useState([]);
     // grab passed string from search bar, or "" if empty
     const searchFilter = useSelector(state => state.searchFilter.content)
 
@@ -47,25 +47,27 @@ const Products = ({cat, filters, sort}) => {
         getProducts();
       }, []);
 
-    // TODO
-    useEffect(() => { 
-        setFilters(
-            products.filter((item) =>
-                Object.entries(filters).every(([key, value]) =>
-                    item[key] === value
-              )
-        )
+    // Filtering items based on selected filters.
+    useEffect(() => {
+      const selectedFilters = Object.keys(filters).filter((key) => filters[key]);
+      if (selectedFilters.length > 0) {
+        const newFilteredProds = products.filter((product) =>
+          selectedFilters.some((filterKey) => product.categories.toLowerCase() === filterKey.toLowerCase())
         );
-    }, [products, filters]);
+        setFilteredProds(newFilteredProds); // Set based on filters
+      } else {
+        setFilteredProds(products); // If no filters, show all
+      }
+    }, [filters, products]);
 
     // Sorting by item prices ascending and descending
     useEffect(() => {
         if (sort === "ascending") {
-          setFilters((prev) =>
+          setFilteredProds((prev) =>
             [...prev].sort((a, b) => a.price - b.price)
           );
         } else if (sort === "descending"){
-          setFilters((prev) =>
+          setFilteredProds((prev) =>
             [...prev].sort((a, b) => b.price - a.price)
           );
         }
@@ -75,13 +77,7 @@ const Products = ({cat, filters, sort}) => {
       <Wrapper>
         <Container>
         {products.length > 0 ? (
-          filters
-          ? filterSelect.filter(filterSelect => filterSelect.title.toLowerCase()
-          .includes(searchFilter.toLowerCase()))
-          .map((item) => <Product item={item} key={item._id} />)
-          : products.filter(filterSelect => filterSelect.title.toLowerCase()
-          .includes(searchFilter.toLowerCase()))
-              .map((item) => <Product item={item} key={item._id} />)
+          filteredProds.map((item) => <Product item={item} key={item._id} />)
         ) : (
           Array.from({ length: 50 }).map((_, index) => (
             <SkeleCon>

@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
+import FilterInput from "../components/FilterInput";
 import { Container, FilterContainer, Filter, FilterText, Select, Option, EmptyContainer } from "../styles/ItemList.styles";
 import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput } from "../styles/Products.styles";
 import { useState, useEffect } from "react";
@@ -15,13 +16,36 @@ const ItemList = ({user, setUser}) => {
     const [sort, setSort] = useState("Price Ascending");
     const page = 'prod';
 
-    const handleFilter = (e) => {
-        const value = e.target.value;
-        setFilter({
-            ...filters,
-            [e.target.name]: value,
-        });
-    };
+    // const handleFilter = (e) => {
+    //     const value = e.target.value;
+    //     setFilter({
+    //         ...filters,
+    //         [e.target.name]: value,
+    //     });
+    // };
+
+    // Filter
+    const filterNames = [
+        "Apples",
+        "Bananas",
+        "Berries",
+        "Citrus",
+        "Grapes",
+        "Melon",
+        "Peaches",
+        "Pears",
+        "Plums",
+        "Tropical"
+    ]
+
+    const handleCheckboxChange = (e) => {
+        const { value, checked } = e.target;
+        setFilter((prevFilters) => ({
+            ...prevFilters,
+            [value]: checked,
+        }))
+        // console.log(filters);
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -50,27 +74,10 @@ const ItemList = ({user, setUser}) => {
                 </FilterLabelContainer>
                 <FilterShelf>
                     <FilterType>Fruit Type</FilterType>
-                    <FilterName>
-                    <input type="checkbox"/> Plums
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Apple
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Peaches
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Pears
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Citrus
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Melon
-                    </FilterName>
-                    <FilterName>
-                    <input type="checkbox"/> Tropical
-                    </FilterName><br></br>
+                    {filterNames.map((name) => (
+                        <FilterInput value={name} onChange={handleCheckboxChange}/>
+                    ))}
+                    <br></br>
                     <FilterType>Price</FilterType>
                     <FilterName>
                     $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
