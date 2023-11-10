@@ -169,3 +169,8 @@ export const Input = styled.input`
     font-size: 16px;
     background-color: transparent;
 `
+
+export const Error = styled.span`
+    color: red;
+    display: row;
+`

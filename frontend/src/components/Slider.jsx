@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { sliderItems, bestSellers } from "../data";
-import {Container, ImageContainer, InfoContainer, Title, Description, Button, BottomSlide, SubTitle, BottomInfo, ProductContainer, ProductImage, ProductNameContainer, Skeleton} from "../styles/Slider.styles.jsx";
+import { sliderItems } from "../data";
+import {Container, ImageContainer, InfoContainer, Title, Description, Button, BottomSlide, SubTitle, BottomInfo, ProductContainer, ProductImage, ProductNameContainer, Skeleton, ShopAll, TC } from "../styles/Slider.styles.jsx";
 import {
     BrowserRouter as Router,
     Route,
@@ -48,24 +48,26 @@ const Slider = () => {
     // route to products page
     let navigate = useNavigate();
     const handleShopNow = () => {
-        let path = '/products/';
+        let path = '/in-season/';
         navigate(path);
     };
 
     return (
         <Container>
-            <ImageContainer>
-                {sliderItems.map(item=>(
-                    <InfoContainer key={item.id}>
-                        <Title>{item.title}</Title>
-                        <Description>{item.desc}</Description>
-                        <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
-                    </InfoContainer>
-                ))}
-            </ImageContainer>
+            <TC>
+                <ImageContainer/>
+                <InfoContainer>
+                    <Title>Check What's In Season</Title>
+                    <Description>Shop from our wide variety of in-season fruits</Description>
+                    <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
+                </InfoContainer>
+            </TC>
 
             <BottomSlide>
                 <SubTitle>Some of our Best Sellers</SubTitle>
+                <Link to="/best-sellers" style={{textDecoration: "none"}}>
+                    <ShopAll>Shop All</ShopAll>
+                </Link>
             </BottomSlide>
             <BottomInfo>
                 {best.length > 0 ? (
@@ -74,7 +76,7 @@ const Slider = () => {
                             <ProductContainer>
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
-                                    <h2>{item.title.split(',')[0]}</h2>
+                                    <h2 style={{fontSize: "23px"}}>{item.title.split(',')[0]}</h2>
                                     <h2 style={{marginTop: "0px", fontFamily: "Courier New"}}>${item.price}</h2>
                                 </ProductNameContainer>
                             </ProductContainer>
@@ -90,6 +92,9 @@ const Slider = () => {
             </BottomInfo>
             <BottomSlide>
                 <SubTitle>Store Picks</SubTitle>
+                <Link to="/store-picks" style={{textDecoration: "none"}}>
+                    <ShopAll>Shop All</ShopAll>
+                </Link>
             </BottomSlide>
             <BottomInfo>
                 {picks.length > 0 ? (
@@ -113,7 +118,10 @@ const Slider = () => {
                 )}
             </BottomInfo>
             <BottomSlide>
-                <SubTitle>Some of our Exotic Selection</SubTitle>
+                <SubTitle>Some of our Exotic Selections</SubTitle>
+                <Link to="/exotic-fruits" style={{textDecoration: "none"}}>
+                    <ShopAll>Shop All</ShopAll>
+                </Link>
             </BottomSlide>
             <BottomInfo>
                 {exotic.length > 0 ? (

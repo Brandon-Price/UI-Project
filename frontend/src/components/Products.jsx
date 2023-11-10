@@ -3,7 +3,7 @@ import Product from "./Product";
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput, Skeleton, SkeleCon } from "../styles/Products.styles";
+import { Skeleton, SkeleCon } from "../styles/Products.styles";
 
 
 // Focuses on handling and organzing the product display page
@@ -16,8 +16,7 @@ const Container = styled.div`
     margin-right: 15px;
     justify-content: space-between;
     overflow:hidden;
-    width: 80%;
-    max-width: 1920px;
+    width: 100%;
     border-top: 2px solid #d4d4d4;
     border-bottom: 2px solid #d4d4d4;
 `
@@ -26,11 +25,13 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  width: 80%;
+  max-width: 1920px;
 `
 
-const Products = ({cat, filters, sort}) => {
+const Products = ({cat, filters, priceFilter, sort}) => {
     const [products, setProducts] = useState([]);
-    const [filterSelect, setFilters] = useState([]);
+    const [filteredProds, setFilteredProds] = useState([]);
     // grab passed string from search bar, or "" if empty
     const searchFilter = useSelector(state => state.searchFilter.content)
 
@@ -46,88 +47,44 @@ const Products = ({cat, filters, sort}) => {
         getProducts();
       }, []);
 
-    // TODO
-    useEffect(() => { 
-        setFilters(
-            products.filter((item) =>
-                Object.entries(filters).every(([key, value]) =>
-                    item[key] === value
-              )
-        )
+    // Filtering items based on selected filters.
+    useEffect(() => {
+      const selectedCategoryFilters = Object.keys(filters).filter((key) => filters[key]);
+      let newFilteredProds = products;
+
+      if (selectedCategoryFilters.length > 0) {
+        newFilteredProds = newFilteredProds.filter((product) =>
+          selectedCategoryFilters.some((filterKey) => product.categories.toLowerCase() === filterKey.toLowerCase())
         );
-    }, [products, filters]);
+      }
+
+      if (priceFilter.min !== '' && priceFilter.max !== '') {
+        newFilteredProds = newFilteredProds.filter((product) =>
+          product.price >= parseFloat(priceFilter.min) && product.price <= parseFloat(priceFilter.max)
+        );
+      }
+
+      setFilteredProds(newFilteredProds);
+    }, [filters, products, priceFilter]);
 
     // Sorting by item prices ascending and descending
     useEffect(() => {
         if (sort === "ascending") {
-          setFilters((prev) =>
+          setFilteredProds((prev) =>
             [...prev].sort((a, b) => a.price - b.price)
           );
         } else if (sort === "descending"){
-          setFilters((prev) =>
+          setFilteredProds((prev) =>
             [...prev].sort((a, b) => b.price - a.price)
           );
         }
-        // Add some sort of way to look at only the ints in the string
-        // else if (sort === "weightDesc"){
-        //   setFilters((prev) =>
-        //     [...prev].sort((a, b) => b.pricePerWeight - a.pricePerWeight)
-        //   );
-        // }
-        // else if (sort === "weightAsc"){
-        //   setFilters((prev) =>
-        //     [...prev].sort((a, b) => a.pricePerWeight - b.pricePerWeight)
-        //   );
-        // }
       }, [sort]);
 
     return (
       <Wrapper>
-        <FilterShelfContainer>
-          <FilterLabelContainer>
-            <FilterLabel>Filter By</FilterLabel>
-          </FilterLabelContainer>
-          <FilterShelf>
-            <FilterType>Fruit Type</FilterType>
-            <FilterName>
-              <input type="checkbox"/> Plums
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Apple
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Peaches
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Pears
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Citrus
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Melon
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Tropical
-            </FilterName><br></br>
-            <FilterType>Price</FilterType>
-            <FilterName>
-              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
-            </FilterName>
-            <FilterName>
-              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MAX"/>
-            </FilterName>
-          </FilterShelf>
-        </FilterShelfContainer>
         <Container>
         {products.length > 0 ? (
-          filters
-          ? filterSelect.filter(filterSelect => filterSelect.title.toLowerCase()
-          .includes(searchFilter.toLowerCase()))
-          .map((item) => <Product item={item} key={item._id} />)
-          : products.filter(filterSelect => filterSelect.title.toLowerCase()
-          .includes(searchFilter.toLowerCase()))
-              .map((item) => <Product item={item} key={item._id} />)
+          filteredProds.map((item) => <Product item={item} key={item._id} />)
         ) : (
           Array.from({ length: 50 }).map((_, index) => (
             <SkeleCon>
