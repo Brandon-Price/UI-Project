@@ -57,7 +57,7 @@ const SignUpSignIn = () => {
                     </Form>
                 </LeftContainer>
             </Wrapper>
-            <Line>:</Line>
+            <Line style={{opacity: "0%"}}>:</Line>
             
             <Wrapper>
             <RightContainer>

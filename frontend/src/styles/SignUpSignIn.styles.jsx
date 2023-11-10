@@ -10,13 +10,13 @@ export const Container = styled.div`
 `
 
 export const Image = styled.div`
-    background-image: url(https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?cs=srgb&dl=pexels-tae-fuller-1141853.jpg&fm=jpg);
-    background-size: cover;
+    background-image: url(https://wallpapers.com/images/hd/yellow-lemons-on-white-surface-1syovlf55x9ng3f7.jpg);
+    background-size: fit;
     background-position: center;
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: blur(3px);
+    filter: blur(0px);
 `
 
 export const Line = styled.div`
@@ -29,7 +29,6 @@ export const Line = styled.div`
 export const LeftContainer = styled.div`
     width: 50%;
     min-height: 308px;
-    
 `
 
 export const RightContainer = styled.div`
@@ -43,6 +42,7 @@ export const Wrapper = styled.div`
     background-color: white;
     border-radius: 10px;
     position: relative;
+    filter: drop-shadow(0 0 0.75rem lightgray);
 `
 
 export const Title = styled.h1`
