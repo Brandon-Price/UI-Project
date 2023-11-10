@@ -5,7 +5,6 @@ import { COLORS } from "./Navbar.styles"
 export const FilterShelfContainer = styled.div`
     min-width: 300px;
     height: 750px;
-    margin-left: 3vw;
     background-color: white;
 `
 

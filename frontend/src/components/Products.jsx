@@ -3,7 +3,7 @@ import Product from "./Product";
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput, Skeleton, SkeleCon } from "../styles/Products.styles";
+import { Skeleton, SkeleCon } from "../styles/Products.styles";
 
 
 // Focuses on handling and organzing the product display page
@@ -16,8 +16,7 @@ const Container = styled.div`
     margin-right: 15px;
     justify-content: space-between;
     overflow:hidden;
-    width: 80%;
-    max-width: 1920px;
+    width: 100%;
     border-top: 2px solid #d4d4d4;
     border-bottom: 2px solid #d4d4d4;
 `
@@ -26,6 +25,8 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  width: 80%;
+  max-width: 1920px;
 `
 
 const Products = ({cat, filters, sort}) => {
@@ -72,42 +73,6 @@ const Products = ({cat, filters, sort}) => {
 
     return (
       <Wrapper>
-        <FilterShelfContainer>
-          <FilterLabelContainer>
-            <FilterLabel>Filter By</FilterLabel>
-          </FilterLabelContainer>
-          <FilterShelf>
-            <FilterType>Fruit Type</FilterType>
-            <FilterName>
-              <input type="checkbox"/> Plums
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Apple
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Peaches
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Pears
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Citrus
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Melon
-            </FilterName>
-            <FilterName>
-              <input type="checkbox"/> Tropical
-            </FilterName><br></br>
-            <FilterType>Price</FilterType>
-            <FilterName>
-              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
-            </FilterName>
-            <FilterName>
-              $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MAX"/>
-            </FilterName>
-          </FilterShelf>
-        </FilterShelfContainer>
         <Container>
         {products.length > 0 ? (
           filters
