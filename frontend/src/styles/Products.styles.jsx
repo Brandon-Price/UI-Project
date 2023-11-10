@@ -46,6 +46,13 @@ export const PriceInput = {
     width: "75px",
 };
 
+export const PriceButton = styled.button`
+    height: 25px;
+    width: 75px;
+    
+    margin-left: 17px;
+`
+
 /* skeleton loading */
 const loading = keyframes`
     to {background-position-x: 15vw;}

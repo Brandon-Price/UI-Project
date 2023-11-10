@@ -3,13 +3,16 @@ import Footer from "../components/Footer";
 import Products from "../components/Products";
 import FilterInput from "../components/FilterInput";
 import { Container, FilterContainer, Filter, FilterText, Select, Option, EmptyContainer } from "../styles/ItemList.styles";
-import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput } from "../styles/Products.styles";
+import { FilterShelfContainer, FilterLabelContainer, FilterLabel, FilterShelf, FilterType, FilterName, PriceInput, PriceButton } from "../styles/Products.styles";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Will be handling the item filters and their containers
 
 const ItemList = ({user, setUser}) => {
+    const [min, setMin] = useState(0);
+    const [max, setMax] = useState(99);
+
     const location = useLocation();
     const cat = location.pathname.split("/")[2];
     const page = 'prod';
@@ -43,17 +46,30 @@ const ItemList = ({user, setUser}) => {
     }
 
     // Price filtering
-    const handleMinPriceChange = (e) => {
+    const handleMin = (e) => {
         const { value } = e.target;
-        if (value <= priceFilters.max || priceFilters.max === '') {
-            setPriceFilters({ ...priceFilters, min: value });
+        if (value !== '') {
+            setMin(parseFloat(e.target.value));
+        } else {
+            setMin(0);
         }
-    };
-    const handleMaxPriceChange = (e) => {
+    }
+    const handleMax = (e) => {
         const { value } = e.target;
-        if (value >= priceFilters.min || priceFilters.min === '') {
-            setPriceFilters({ ...priceFilters, max: value });
+        if (value !== '') {
+            setMax(parseFloat(e.target.value));
+        } else {
+            setMax(99);
         }
+    }
+    const setMinMax = () => {
+        if (min > max) {
+            alert("Price Filter\nMIN cannot be larger than MAX!");
+            return;
+        }
+        setPriceFilters({min: min, max: max});
+        console.log(min + " : " + max);
+        console.log(priceFilters);
     }
 
     useEffect(() => {
@@ -95,8 +111,7 @@ const ItemList = ({user, setUser}) => {
                         min="0.01" 
                         step="0.01" 
                         placeholder="MIN"
-                        value={priceFilters.min}
-                        onChange={handleMinPriceChange}/>
+                        onChange={handleMin}/>
                     </FilterName>
                     <FilterName>
                     $ <input style={PriceInput} 
@@ -104,8 +119,12 @@ const ItemList = ({user, setUser}) => {
                         min="0.01" 
                         step="0.01" 
                         placeholder="MAX"
-                        value={priceFilters.max}
-                        onChange={handleMaxPriceChange}/>
+                        onChange={handleMax}/>
+                    </FilterName>
+                    <FilterName>
+                        <PriceButton onClick={setMinMax}>
+                            Apply
+                        </PriceButton>
                     </FilterName>
                 </FilterShelf>
                 </FilterShelfContainer>
