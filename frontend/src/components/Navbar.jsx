@@ -5,7 +5,7 @@ import { logout } from '../redux/userSlice.js';
 import { toRemoveAll } from '../redux/cartRedux.js';
 import { updateFilter } from '../redux/searchFilter.js';
 import { useNavigate } from "react-router-dom";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton, MenuButtons, MenuContainer} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
@@ -16,6 +16,10 @@ const Navbar = ({page}) => {
     const user = useSelector((state) => state.user.currentUser);
     const cartItems = useSelector(state => state.cart.quantity);
     const searchFilter = useSelector(state => state.searchFilter)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     // handle search routing
     let navigate = useNavigate();

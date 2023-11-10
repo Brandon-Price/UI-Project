@@ -132,7 +132,7 @@ export const BottomSlide = styled.div`
 
 export const SubTitle = styled.h2`
     text-align: left;
-    font-size: 50px;
+    font-size: 44px;
     width: auto;
     max-width: 1500px;
     padding-bottom: 5px;
@@ -199,6 +199,7 @@ export const ProductNameContainer = styled.div`
     flex-direction: column;
     height: 75px;
     color: white;
+    border-radius: 7px;
     color: ${COLORS.text};
     background-color: ${COLORS.sub};
     align-items: center;

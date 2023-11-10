@@ -52,10 +52,6 @@ const Slider = () => {
         navigate(path);
     };
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <Container>
             <TC>
@@ -80,7 +76,7 @@ const Slider = () => {
                             <ProductContainer>
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
-                                    <h2>{item.title.split(',')[0]}</h2>
+                                    <h2 style={{fontSize: "23px"}}>{item.title.split(',')[0]}</h2>
                                     <h2 style={{marginTop: "0px", fontFamily: "Courier New"}}>${item.price}</h2>
                                 </ProductNameContainer>
                             </ProductContainer>

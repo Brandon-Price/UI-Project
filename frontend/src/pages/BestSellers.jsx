@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import MenuPage from '../components/MenuPage';
+import { useEffect } from 'react';
 
 const Container = styled.div`
 
