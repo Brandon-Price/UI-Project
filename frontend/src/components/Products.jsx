@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   max-width: 1920px;
 `
 
-const Products = ({cat, filters, sort}) => {
+const Products = ({cat, filters, priceFilter, sort}) => {
     const [products, setProducts] = useState([]);
     const [filteredProds, setFilteredProds] = useState([]);
     // grab passed string from search bar, or "" if empty
@@ -49,16 +49,23 @@ const Products = ({cat, filters, sort}) => {
 
     // Filtering items based on selected filters.
     useEffect(() => {
-      const selectedFilters = Object.keys(filters).filter((key) => filters[key]);
-      if (selectedFilters.length > 0) {
-        const newFilteredProds = products.filter((product) =>
-          selectedFilters.some((filterKey) => product.categories.toLowerCase() === filterKey.toLowerCase())
+      const selectedCategoryFilters = Object.keys(filters).filter((key) => filters[key]);
+      let newFilteredProds = products;
+
+      if (selectedCategoryFilters.length > 0) {
+        newFilteredProds = newFilteredProds.filter((product) =>
+          selectedCategoryFilters.some((filterKey) => product.categories.toLowerCase() === filterKey.toLowerCase())
         );
-        setFilteredProds(newFilteredProds); // Set based on filters
-      } else {
-        setFilteredProds(products); // If no filters, show all
       }
-    }, [filters, products]);
+
+      if (priceFilter.min !== '' && priceFilter.max !== '') {
+        newFilteredProds = newFilteredProds.filter((product) =>
+          product.price >= parseFloat(priceFilter.min) && product.price <= parseFloat(priceFilter.max)
+        );
+      }
+
+      setFilteredProds(newFilteredProds);
+    }, [filters, products, priceFilter]);
 
     // Sorting by item prices ascending and descending
     useEffect(() => {

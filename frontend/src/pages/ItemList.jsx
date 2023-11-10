@@ -12,19 +12,13 @@ import { useLocation } from "react-router-dom";
 const ItemList = ({user, setUser}) => {
     const location = useLocation();
     const cat = location.pathname.split("/")[2];
-    const [filters, setFilter] = useState({});
-    const [sort, setSort] = useState("Price Ascending");
     const page = 'prod';
 
-    // const handleFilter = (e) => {
-    //     const value = e.target.value;
-    //     setFilter({
-    //         ...filters,
-    //         [e.target.name]: value,
-    //     });
-    // };
+    const [filters, setFilter] = useState({});
+    const [priceFilters, setPriceFilters] = useState({ min: '', max: '' });
+    const [sort, setSort] = useState("Price Ascending");
 
-    // Filter
+    // Category filter names
     const filterNames = [
         "Apples",
         "Bananas",
@@ -38,6 +32,7 @@ const ItemList = ({user, setUser}) => {
         "Tropical"
     ]
 
+    // Category filtering
     const handleCheckboxChange = (e) => {
         const { value, checked } = e.target;
         setFilter((prevFilters) => ({
@@ -45,6 +40,20 @@ const ItemList = ({user, setUser}) => {
             [value]: checked,
         }))
         // console.log(filters);
+    }
+
+    // Price filtering
+    const handleMinPriceChange = (e) => {
+        const { value } = e.target;
+        if (value <= priceFilters.max || priceFilters.max === '') {
+            setPriceFilters({ ...priceFilters, min: value });
+        }
+    };
+    const handleMaxPriceChange = (e) => {
+        const { value } = e.target;
+        if (value >= priceFilters.min || priceFilters.min === '') {
+            setPriceFilters({ ...priceFilters, max: value });
+        }
     }
 
     useEffect(() => {
@@ -81,14 +90,26 @@ const ItemList = ({user, setUser}) => {
                     <br></br>
                     <FilterType>Price</FilterType>
                     <FilterName>
-                    $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MIN"/>
+                    $ <input style={PriceInput} 
+                        type="number" 
+                        min="0.01" 
+                        step="0.01" 
+                        placeholder="MIN"
+                        value={priceFilters.min}
+                        onChange={handleMinPriceChange}/>
                     </FilterName>
                     <FilterName>
-                    $ <input style={PriceInput} type="number" min="0.01" step="0.01" placeholder="MAX"/>
+                    $ <input style={PriceInput} 
+                        type="number" 
+                        min="0.01" 
+                        step="0.01" 
+                        placeholder="MAX"
+                        value={priceFilters.max}
+                        onChange={handleMaxPriceChange}/>
                     </FilterName>
                 </FilterShelf>
                 </FilterShelfContainer>
-                <Products cat = {cat} filters={filters} sort={sort}/>
+                <Products cat = {cat} filters={filters} priceFilter={priceFilters} sort={sort}/>
             </div>
             <EmptyContainer/>
             <Footer/>
