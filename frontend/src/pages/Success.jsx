@@ -39,10 +39,13 @@ const Success = () => {
     // When you click on the button in the success page it removes all of the cart
     // So whent the user goes to the homepage nothing should be in the cart
     // You will also want to handle calling the api data to post the items to orders
-    const handleCart = (e) => {
-      e.preventDefault();
-      dispatch(toRemoveAll(cartItems))
-    };
+    // const handleCart = (e) => {
+    //   e.preventDefault();
+    //   dispatch(toRemoveAll(cartItems))
+    // };
+    useEffect(() => {
+      dispatch(toRemoveAll(cartItems));
+    }, []);
 
     // Products to display as recommended.
     const [products, setProducts] = useState([]);
