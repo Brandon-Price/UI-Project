@@ -85,7 +85,7 @@ export const InfoContainer = styled.div`
 `
 
 export const Title = styled.h1`
-    margin: 15px;
+    margin: 3px;
     font-size: 55px;
     color: ${COLORS.sub};
 `

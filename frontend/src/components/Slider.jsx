@@ -57,6 +57,7 @@ const Slider = () => {
             <TC>
                 <ImageContainer/>
                 <InfoContainer>
+                    <br/><br/><br/>
                     <Title>Check What's In Season</Title>
                     <Description>Shop from our wide variety of in-season fruits</Description>
                     <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
