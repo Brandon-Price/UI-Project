@@ -8,7 +8,8 @@ import Success from "./pages/Success";
 import StorePicks from "./pages/StorePicks";
 import InSeason from "./pages/InSeason";
 import BestSellers from "./pages/BestSellers";
-import  ExoticFruits from "./pages/ExoticFruits";
+import ExoticFruits from "./pages/ExoticFruits";
+import CartEmpty from "./pages/CartEmpty";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,6 +19,7 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
+  const cart = useSelector((state) => state.cart);
 
   return (
     <Router>
@@ -30,7 +32,7 @@ const App = () => {
             <Route path="/best-sellers" element={<BestSellers/>}/>
             <Route path="/exotic-fruits" element={<ExoticFruits/>}/>
             <Route path="/about" element={<About/>}/>
-            <Route path="/cart" element={user ? <ShoppingCart/> : <SignUpSignIn/>}/>
+            <Route path="/cart" element={cart.quantity === 0 ? <CartEmpty/> : <ShoppingCart/>}/>
             <Route path="/account-log-in-sign-up" element={user ? <Home/> : <SignUpSignIn/>}/>
             <Route path="/success" element={<Success/>}/>
           </Routes>

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { COLORS } from "./Navbar.styles";
 
 export const Container = styled.div`
-
+    margin-top: 61px;
 `
 
 export const Wrapper = styled.div`
@@ -173,4 +174,13 @@ export const Input = styled.input`
 export const Error = styled.span`
     color: red;
     display: row;
+`
+
+export const CLink = styled(Link)`
+    text-decoration: none;
+    color: ${COLORS.sub};
+
+    &:hover {
+        text-decoration: underline;
+    }
 `
