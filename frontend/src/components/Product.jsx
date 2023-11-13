@@ -10,7 +10,8 @@ const Product = ({item}) => {
         <Container>
             <Image src={item.img} />
             <Info>
-                <Title>{item.title}</Title>
+                <Title>{item.title.split(',')[0]}</Title>
+                <Title style={{fontSize: "16px"}}>{item.title.split(',')[1]}</Title>
                 <Price>${item.price}</Price>
                 <Link to={`/products/${item._id}`}>
                     <Button aria-label={item.title + " page link"} >View Details</Button>
