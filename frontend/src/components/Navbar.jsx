@@ -1,4 +1,4 @@
-import {Close, Search, LocalMallOutlined, ExitToApp} from '@material-ui/icons';
+import {Close, Search, LocalMallOutlined} from '@material-ui/icons';
 import {Badge} from '@material-ui/core';
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/userSlice.js';
@@ -6,7 +6,7 @@ import { toRemoveAll } from '../redux/cartRedux.js';
 import { updateFilter } from '../redux/searchFilter.js';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from 'react';
-import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton, MenuButtons, MenuContainer} from "../styles/Navbar.styles.jsx"
+import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton, MenuButtons, MenuContainer, Logout} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
 
@@ -95,7 +95,12 @@ const Navbar = ({page}) => {
                     </SearchContainer>
                 </Center>
                 <Right>
-                    {user ? (<Menu><Title style={{cursor: "default", color:"white"}}>Hello {user.username}</Title><ExitToApp aria-label={"Logout"} style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
+                    {user ? (<Menu style={{alignItems: "center"}}><Title style={{
+                        cursor: "default", 
+                        color:"white", 
+                        fontSize: "19px",
+                        margin: "0"}}>
+                            Hello {user.username}</Title><Logout aria-label={"Logout"} style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
                         <Menu>Login</Menu>
                     </MenuLink>)}
                     <Menu>

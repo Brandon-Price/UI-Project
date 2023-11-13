@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {mobile} from "../components/responsive";
 import { Link } from "react-router-dom";
+import { ExitToApp } from "@material-ui/icons";
 
 export const COLORS = {
     main: '#0C2340',
@@ -182,4 +183,13 @@ export const MenuContainer = styled.div`
 export const MenuButtons = styled.div`
     font-weight: bold;
     font-size: 200%;
+`
+
+export const Logout = styled(ExitToApp)`
+    transistion: 0.15s;
+
+    &:hover, &:focus {
+        filter: drop-shadow(${COLORS.text} 1px 1px 5px);
+        transform: scale(1.05);
+    }
 `
