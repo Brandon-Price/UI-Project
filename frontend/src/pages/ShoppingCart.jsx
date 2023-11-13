@@ -14,6 +14,7 @@ import { toRemove } from "../redux/cartRedux";
 
 const ShoppingCart = ({ ifUser }) => {
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.user.currentUser);
     const cart = useSelector(state => state.cart)
     const shipping = 3.99;
     // entered discount code
@@ -127,8 +128,9 @@ const ShoppingCart = ({ ifUser }) => {
                             <SummaryItemText>Total: </SummaryItemText>
                             <SummaryItemPrice>$ {(finalTotal - (finalTotal * currDisc)).toFixed(2)}</SummaryItemPrice>
                         </SummaryItem>
-                        <StripeCheckout
-                            name = "TBD"
+                        {user ? <StripeCheckout
+                            name = "Fruits R Us"
+                            email = {user.email}
                             billingAddress
                             shippingAddress
                             description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
@@ -141,7 +143,22 @@ const ShoppingCart = ({ ifUser }) => {
                                         Checkout
                                 </ButtonLink>
                             </Button>
-                        </StripeCheckout>
+                        </StripeCheckout> : 
+                        <StripeCheckout
+                        name = "Fruits R Us"
+                        billingAddress
+                        shippingAddress
+                        description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
+                        amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
+                        currency="USD"
+                        token = {onToken}
+                        stripeKey={process.env.REACT_APP_STRIPE}> 
+                        <Button>
+                            <ButtonLink >
+                                    Checkout
+                            </ButtonLink>
+                        </Button>
+                    </StripeCheckout>}
                     </CartSummary>
                 </Bottom>
             </Wrapper>
