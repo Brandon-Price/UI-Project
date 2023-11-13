@@ -2,12 +2,13 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import styled from "styled-components";
 import Lottie from 'lottie-react';
+import axios from 'axios';
 import animData from '../assets/Animation.json';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toRemoveAll } from '../redux/cartRedux.js';
+import { Skeleton, SkeleCon } from "../styles/Products.styles";
 import { Container, Head, Tail, Thanks, Wrapper } from '../styles/Success.styles.jsx';
 import Product from '../components/Product.jsx';
 
@@ -98,9 +99,15 @@ const Success = () => {
               border: "none", 
               filter: "none",
               width: "70%"}}>
-                {recommend.map(item=>(
-                  <Product item={item} key={item._id}/>
-                ))}
+                {recommend.length > 0 ? (
+                  recommend.map((item) => <Product item={item} key={item._id}/>)
+                ) : (
+                  Array.from({ length: 4 }).map((_, index) => (
+                    <SkeleCon>
+                      <Skeleton></Skeleton>
+                    </SkeleCon>
+                  ))
+                )}
             </Wrapper>
           </Container>
         <Footer/>
