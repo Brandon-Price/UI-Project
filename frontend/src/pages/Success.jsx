@@ -76,7 +76,7 @@ const Success = () => {
               <Head>Order placed successfully!</Head>
               <Tail>Thank you for choosing Fruits R Us!</Tail>
               <Tail>Your order is being prepared.</Tail>
-              <Tail>We will send an email to </Tail>
+              {user ? <Tail>We will send an email to {user.email}</Tail> : <Tail>We will send a receipt to the provided email.</Tail>}
               <button style={{marginTop: "25px"}}>
                 <ButtonLink to="/">
                   Go to Homepage
