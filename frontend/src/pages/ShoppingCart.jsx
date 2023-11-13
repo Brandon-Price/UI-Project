@@ -15,6 +15,7 @@ import { toRemove } from "../redux/cartRedux";
 const ShoppingCart = ({ ifUser }) => {
     const dispatch = useDispatch()
     const cart = useSelector(state => state.cart)
+    const user = useSelector((state) => state.user.currentUser);
     const shipping = 3.99;
     // entered discount code
     let discCode = "";
@@ -31,6 +32,11 @@ const ShoppingCart = ({ ifUser }) => {
     const onToken = (token) => {
         setStripeToken(token);
     };
+
+    let navigate = useNavigate();
+    const handleLoginPage = () => {
+        navigate("/account-log-in-sign-up");
+    }
 
     /*------------------IMPORTANT------------------------------------ */
     // When using stripe checkout test card data is
@@ -127,21 +133,50 @@ const ShoppingCart = ({ ifUser }) => {
                             <SummaryItemText>Total: </SummaryItemText>
                             <SummaryItemPrice>$ {(finalTotal - (finalTotal * currDisc)).toFixed(2)}</SummaryItemPrice>
                         </SummaryItem>
-                        <StripeCheckout
-                            name = "TBD"
-                            billingAddress
-                            shippingAddress
-                            description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
-                            amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
-                            currency="USD"
-                            token = {onToken}
-                            stripeKey={process.env.REACT_APP_STRIPE}> 
-                            <Button>
-                                <ButtonLink >
-                                        Checkout
-                                </ButtonLink>
-                            </Button>
-                        </StripeCheckout>
+                        {user ? (
+                            <StripeCheckout
+                                name = "Fruits R Us"
+                                billingAddress
+                                shippingAddress
+                                email={user.email}
+                                description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
+                                amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
+                                currency="USD"
+                                token = {onToken}
+                                stripeKey={process.env.REACT_APP_STRIPE}> 
+                                <Button>
+                                    <ButtonLink>
+                                            Checkout
+                                    </ButtonLink>
+                                </Button>
+                            </StripeCheckout>
+                        ) : (
+                            <div>
+                                <Button style={{backgroundColor: "#006600", 
+                                    borderColor: "#006600", 
+                                    marginBottom: "10px"}}
+                                    onClick={handleLoginPage}>
+                                    <ButtonLink>
+                                            Login
+                                    </ButtonLink>
+                                </Button>
+                                <StripeCheckout
+                                name = "Fruits R Us"
+                                billingAddress
+                                shippingAddress
+                                description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
+                                amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
+                                currency="USD"
+                                token = {onToken}
+                                stripeKey={process.env.REACT_APP_STRIPE}> 
+                                <Button>
+                                    <ButtonLink>
+                                            Checkout as Guest
+                                    </ButtonLink>
+                                </Button>
+                            </StripeCheckout>
+                            </div>
+                        )}
                     </CartSummary>
                 </Bottom>
             </Wrapper>
