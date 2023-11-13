@@ -33,6 +33,11 @@ const ShoppingCart = ({ ifUser }) => {
         setStripeToken(token);
     };
 
+    let navigate = useNavigate();
+    const handleLoginPage = () => {
+        navigate("/account-log-in-sign-up");
+    }
+
     /*------------------IMPORTANT------------------------------------ */
     // When using stripe checkout test card data is
     // 4242 4242 4242 4242
@@ -128,37 +133,50 @@ const ShoppingCart = ({ ifUser }) => {
                             <SummaryItemText>Total: </SummaryItemText>
                             <SummaryItemPrice>$ {(finalTotal - (finalTotal * currDisc)).toFixed(2)}</SummaryItemPrice>
                         </SummaryItem>
-                        {user ? <StripeCheckout
-                            name = "Fruits R Us"
-                            email = {user.email}
-                            billingAddress
-                            shippingAddress
-                            description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
-                            amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
-                            currency="USD"
-                            token = {onToken}
-                            stripeKey={process.env.REACT_APP_STRIPE}> 
-                            <Button>
-                                <ButtonLink >
-                                        Checkout
-                                </ButtonLink>
-                            </Button>
-                        </StripeCheckout> : 
-                        <StripeCheckout
-                        name = "Fruits R Us"
-                        billingAddress
-                        shippingAddress
-                        description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
-                        amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
-                        currency="USD"
-                        token = {onToken}
-                        stripeKey={process.env.REACT_APP_STRIPE}> 
-                        <Button>
-                            <ButtonLink >
-                                    Checkout
-                            </ButtonLink>
-                        </Button>
-                    </StripeCheckout>}
+                        {user ? (
+                            <StripeCheckout
+                                name = "Fruits R Us"
+                                billingAddress
+                                shippingAddress
+                                email={user.email}
+                                description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
+                                amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
+                                currency="USD"
+                                token = {onToken}
+                                stripeKey={process.env.REACT_APP_STRIPE}> 
+                                <Button>
+                                    <ButtonLink>
+                                            Checkout
+                                    </ButtonLink>
+                                </Button>
+                            </StripeCheckout>
+                        ) : (
+                            <div>
+                                <Button style={{backgroundColor: "#006600", 
+                                    borderColor: "#006600", 
+                                    marginBottom: "10px"}}
+                                    onClick={handleLoginPage}>
+                                    <ButtonLink>
+                                            Login
+                                    </ButtonLink>
+                                </Button>
+                                <StripeCheckout
+                                name = "Fruits R Us"
+                                billingAddress
+                                shippingAddress
+                                description={`Total $${(finalTotal - (finalTotal * currDisc)).toFixed(2)}`}
+                                amount = {(finalTotal - (finalTotal * currDisc)).toFixed(2) * 100}
+                                currency="USD"
+                                token = {onToken}
+                                stripeKey={process.env.REACT_APP_STRIPE}> 
+                                <Button>
+                                    <ButtonLink>
+                                            Checkout as Guest
+                                    </ButtonLink>
+                                </Button>
+                            </StripeCheckout>
+                            </div>
+                        )}
                     </CartSummary>
                 </Bottom>
             </Wrapper>

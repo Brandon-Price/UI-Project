@@ -35,6 +35,7 @@ const Navbar = ({page}) => {
         e.preventDefault();
         dispatch(logout())
         dispatch(toRemoveAll(cartItems))
+        // navigate("/"); uncomment to let user nav to home on logout rather than log in page.
     };
 
     // search bar enter key handler, passes searchFilter prop to products page
