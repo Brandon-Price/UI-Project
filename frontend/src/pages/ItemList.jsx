@@ -109,7 +109,7 @@ const ItemList = ({user, setUser}) => {
                     ))}
                     <br></br>
                     <FilterType>Price</FilterType>
-                    <FilterName>
+                    <FilterName aria-label={"Enter minimum price to filter by"}>
                     $ <input style={PriceInput} 
                         type="number" 
                         min="0.01" 
@@ -117,7 +117,7 @@ const ItemList = ({user, setUser}) => {
                         placeholder="MIN"
                         onChange={handleMin}/>
                     </FilterName>
-                    <FilterName>
+                    <FilterName aria-label={"Enter maximum price to filter by"}>
                     $ <input style={PriceInput} 
                         type="number" 
                         min="0.01" 
@@ -125,7 +125,7 @@ const ItemList = ({user, setUser}) => {
                         placeholder="MAX"
                         onChange={handleMax}/>
                     </FilterName>
-                    <FilterName>
+                    <FilterName aria-label={"Press enter to apply minimum and maximum price filters"}>
                         <PriceButton onClick={setMinMax}>
                             Apply
                         </PriceButton>
