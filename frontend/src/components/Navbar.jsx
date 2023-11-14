@@ -90,7 +90,6 @@ const Navbar = ({page}) => {
                 <Center>
                     <SearchContainer>
                         <Search style ={{color: "gray", fontSize:20}}/>
-                        <Line/>
                         <Input aria-label={"Search bar, to search type your item and press enter"} placeholder = "Search" onKeyDown={(e) => handleSearch(e)}/>
                         <Close style={{color:"gray"}} onClick={() => dispatch(updateFilter(""))}></Close>
                     </SearchContainer>

@@ -53,7 +53,7 @@ export const SearchContainer = styled.div`
     border-radius: 20px;
     display: flex;
     align-items: center;
-    width: 360px;
+    width: 300px;
     height: 24px;
     margin-left: 25px;
     padding: 5px;
@@ -69,6 +69,7 @@ export const Input = styled.input`
     color: gray;
     outline: none;
     font-size: 16px;
+    margin: 0px 7px;
     background-color: transparent; 
     ${mobile({width: "50px"})}
 `

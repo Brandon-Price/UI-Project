@@ -101,7 +101,13 @@ const Products = ({cat, filters, priceFilter, sort}) => {
       <Wrapper>
         <Container>
         {products.length > 0 ? (
-          filteredProds.map((item) => <Product item={item} key={item._id} />)
+          filters
+          ? filteredProds.filter(filteredProds => filteredProds.title.toLowerCase()
+          .includes(searchFilter.toLowerCase()))
+          .map((item) => <Product item={item} key={item._id} />)
+          : products.filter(filteredProds => filteredProds.title.toLowerCase()
+          .includes(searchFilter.toLowerCase()))
+              .map((item) => <Product item={item} key={item._id} />)
         ) : (
           Array.from({ length: 50 }).map((_, index) => (
             <SkeleCon>
