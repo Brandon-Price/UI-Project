@@ -14,7 +14,7 @@ const Footer = () => {
             <Row>
                 <Col1>
                     <Head3>Fruits R Us!</Head3>
-                    <a href="https://github.com/Brandon-Price/UI-Project" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Brandon-Price/UI-Project" target="_blank" rel="noopener noreferrer" aria-label={"GitHub Page Link"}>
                         <SVG aria-hidden="true" viewBox="0 0 16 16">
                             <path d="M 8 0 c 4.42 0 8 3.58 8 8 a 8.013 8.013 0 0 1 -5.45 7.59 c -0.4 0.08 -0.55 -0.17 -0.55 -0.38 c 0 -0.27 0.01 -1.13 0.01 -2.2 c 0 -0.75 -0.25 -1.23 -0.54 -1.48 c 1.78 
                             -0.2 3.65 -0.88 3.65 -3.95 c 0 -0.88 -0.31 -1.59 -0.82 -2.15 c 0.08 -0.2 0.36 -1.02 -0.08 -2.12 c 0 0 -0.67 -0.22 -2.2 0.82 c -0.64 -0.18 -1.32 -0.27 -2 -0.27 c -0.68 0 -1.36 
