@@ -152,14 +152,6 @@ const ShoppingCart = ({ ifUser }) => {
                             </StripeCheckout>
                         ) : (
                             <div>
-                                <Button style={{backgroundColor: "#006600", 
-                                    borderColor: "#006600", 
-                                    marginBottom: "10px"}}
-                                    onClick={handleLoginPage}>
-                                    <ButtonLink>
-                                            Login
-                                    </ButtonLink>
-                                </Button>
                                 <StripeCheckout
                                 name = "Fruits R Us"
                                 billingAddress
@@ -171,7 +163,7 @@ const ShoppingCart = ({ ifUser }) => {
                                 stripeKey={process.env.REACT_APP_STRIPE}> 
                                 <Button>
                                     <ButtonLink>
-                                            Checkout as Guest
+                                        Checkout
                                     </ButtonLink>
                                 </Button>
                             </StripeCheckout>
