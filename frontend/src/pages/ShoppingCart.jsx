@@ -104,7 +104,7 @@ const ShoppingCart = ({ ifUser }) => {
                                 </PriceContainer>
                                 <Price>$ {product.price * product.quantity}</Price>
                             </ProductPrice>
-                            <DeleteOutline style={{cursor: "pointer"}} onClick={() => dispatch(toRemove(product))}/>
+                            <DeleteOutline aria-label={"Remove " + product.title + " from cart"} tabindex="0" style={{cursor: "pointer"}} onClick={() => dispatch(toRemove(product))} onKeyDown={() => dispatch(toRemove(product))}/>
                         </Product>))}
                         <Hr/>
                     </Info>
