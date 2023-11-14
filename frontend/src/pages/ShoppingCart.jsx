@@ -119,7 +119,7 @@ const ShoppingCart = ({ ifUser }) => {
                             <SummaryItemPrice>$ {shipping}</SummaryItemPrice>
                         </SummaryItem>
                         <SummaryItem>
-                            <SummaryItemText>Discount: <Input onKeyDown={(e) => handleDiscountEnter(e)}/></SummaryItemText>
+                            <SummaryItemText>Discount: <Input aria-label="Discount Code Box, type code then press enter"onKeyDown={(e) => handleDiscountEnter(e)}/></SummaryItemText>
                             {discError ? <Error>Discount does not exist</Error> : <SummaryItemText>- $ {(finalTotal * currDisc).toFixed(2)}</SummaryItemText>}
                         </SummaryItem>
                         <SummaryItem>
@@ -145,7 +145,7 @@ const ShoppingCart = ({ ifUser }) => {
                                 token = {onToken}
                                 stripeKey={process.env.REACT_APP_STRIPE}> 
                                 <Button>
-                                    <ButtonLink>
+                                    <ButtonLink aria-label={"Order Total: " + finalTotal + ". Continue Checkout?"}>
                                             Checkout
                                     </ButtonLink>
                                 </Button>
