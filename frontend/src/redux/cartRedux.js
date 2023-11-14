@@ -13,9 +13,16 @@ const cartSlice = createSlice({
     // https://www.youtube.com/watch?v=_shA5Xwe8_4
     reducers: {
         addProduct: (state, action) => {
-            state.quantity += 1;
-            state.products.push(action.payload);
-            state.total += action.payload.price * action.payload.quantity;
+            const prodExists = state.products.find(item => item._id === action.payload._id);
+
+            if (prodExists) {
+                prodExists.quantity += 1;
+            } else {
+                state.quantity += 1;
+                state.products.push(action.payload);
+            }
+
+            state.total += action.payload.price;
         },
         toRemove:(state, action) =>{
             const prodID = action.payload._id;
