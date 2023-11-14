@@ -60,21 +60,21 @@ const Slider = () => {
                     <br/><br/><br/>
                     <Title>Check What's In Season</Title>
                     <Description>Shop from our wide variety of in-season fruits</Description>
-                    <Button onClick={() => handleShopNow()}>SHOP NOW</Button>
+                    <Button aria-label={"Press Enter to shop In Season fruits"} onClick={() => handleShopNow()}>SHOP NOW</Button>
                 </InfoContainer>
             </TC>
 
             <BottomSlide>
                 <SubTitle>Some of our Best Sellers</SubTitle>
                 <Link to="/best-sellers" style={{textDecoration: "none"}}>
-                    <ShopAll>Shop All</ShopAll>
+                    <ShopAll aria-label={"Press Enter to shop Best Sellers"}>Shop All</ShopAll>
                 </Link>
             </BottomSlide>
             <BottomInfo>
                 {best.length > 0 ? (
                     best.map(item=>(
                         <Link to={`/products/${item._id}`}>
-                            <ProductContainer>
+                            <ProductContainer aria-label={item.title.split(',')[0] + item.price + "dollars"}>
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2 style={{fontSize: "23px"}}>{item.title.split(',')[0]}</h2>
@@ -94,14 +94,14 @@ const Slider = () => {
             <BottomSlide>
                 <SubTitle>Store Picks</SubTitle>
                 <Link to="/store-picks" style={{textDecoration: "none"}}>
-                    <ShopAll>Shop All</ShopAll>
+                    <ShopAll aria-label={"Press Enter to shop Store Picks"}>Shop All</ShopAll>
                 </Link>
             </BottomSlide>
             <BottomInfo>
                 {picks.length > 0 ? (
                     picks.map(item=>(
                         <Link to={`/products/${item._id}`}>
-                            <ProductContainer>
+                            <ProductContainer aria-label={item.title.split(',')[0] + item.price + "dollars"}>
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2>{item.title.split(',')[0]}</h2>
@@ -121,14 +121,14 @@ const Slider = () => {
             <BottomSlide>
                 <SubTitle>Some of our Exotic Selections</SubTitle>
                 <Link to="/exotic-fruits" style={{textDecoration: "none"}}>
-                    <ShopAll>Shop All</ShopAll>
+                    <ShopAll aria-label={"Press Enter to shop Exotic Selections"}>Shop All</ShopAll>
                 </Link>
             </BottomSlide>
             <BottomInfo>
                 {exotic.length > 0 ? (
                     exotic.map(item=>(
                         <Link to={`/products/${item._id}`}>
-                            <ProductContainer>
+                            <ProductContainer aria-label={item.title.split(',')[0] + item.price + "dollars"}>
                                 <ProductImage src={item.img}></ProductImage>
                                 <ProductNameContainer>
                                     <h2>{item.title.split(',')[0]}</h2>
