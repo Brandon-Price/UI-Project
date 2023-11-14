@@ -14,8 +14,8 @@ import { toRemove } from "../redux/cartRedux";
 
 const ShoppingCart = ({ ifUser }) => {
     const dispatch = useDispatch()
-    const cart = useSelector(state => state.cart)
     const user = useSelector((state) => state.user.currentUser);
+    const cart = useSelector(state => state.cart)
     const shipping = 3.99;
     // entered discount code
     let discCode = "";
