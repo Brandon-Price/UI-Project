@@ -71,7 +71,7 @@ const Item = () => {
                             <Add onClick={() => handleItemQuantity("increase")}/>
                         </AmountContainer>
                     </AddtoCart>
-                    <Button onClick={handleButtonClick}>Add to Cart</Button>
+                    <Button aria-label={"Add " + items.title + " to cart"} onClick={handleButtonClick}>Add to Cart</Button>
                 </InfoContainer>
             </Wrapper>
             <Footer/>
