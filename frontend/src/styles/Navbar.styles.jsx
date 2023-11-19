@@ -41,7 +41,7 @@ export const Wrapper = styled.div`
 `
 
 export const Left = styled.div`
-    flex:1;
+    flex: 1;
     display: flex;
     align-items: center;
     padding: 0px 11px;
@@ -87,12 +87,20 @@ export const Right = styled.div`
 `
 
 export const Logo = styled.h1`
+    width: 240px;
     color: ${COLORS.text}
     font-weight:bold;
     ${mobile({fontSize: "24px"})}
 `
 
 export const Menu = styled.div`
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 25px;
+    padding: 0px;
+    display: flex;
+`
+export const Menu2 = styled.div`
     font-size: 16px;
     cursor: pointer;
     margin-left: 20px;

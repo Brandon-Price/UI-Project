@@ -6,7 +6,7 @@ import { toRemoveAll } from '../redux/cartRedux.js';
 import { updateFilter } from '../redux/searchFilter.js';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from 'react';
-import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton, MenuButtons, MenuContainer, Logout} from "../styles/Navbar.styles.jsx"
+import {Title, MenuLink, Container, Wrapper, Left, SearchContainer, Input, Center, Right, Logo, Menu, Line, CartAnim, SubCon, Expand, ProductMenu, ProdButton, MenuButtons, MenuContainer, Logout, Menu2} from "../styles/Navbar.styles.jsx"
 
 // Its also a sticky navbar so when you scroll it follows
 
@@ -70,7 +70,7 @@ const Navbar = ({page}) => {
         <Container>
             <Wrapper>
                 <Left>
-                <Logo style={{color:"white"}}>TBD</Logo>
+                <Logo style={{color:"white"}}>Fruits-R-Us</Logo>
                 <SubCon>
                     <Wrapper>
                         <Left>
@@ -95,15 +95,15 @@ const Navbar = ({page}) => {
                     </SearchContainer>
                 </Center>
                 <Right>
-                    {user ? (<Menu style={{alignItems: "center"}}><Title style={{
+                    {user ? (<Menu2 style={{alignItems: "center"}}><Title style={{
                         cursor: "default", 
                         color:"white", 
                         fontSize: "19px",
                         margin: "0"}}>
-                            Hello {user.username}</Title><Logout aria-label={"Logout"} style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu>) : (<MenuLink to="/account-log-in-sign-up">
-                        <Menu>Login</Menu>
+                            Hello {user.username}</Title><Logout aria-label={"Logout"} style={{color:"white", padding:'3px'}} onClick={handleLogout}/></Menu2>) : (<MenuLink to="/account-log-in-sign-up">
+                        <Menu2>Login</Menu2>
                     </MenuLink>)}
-                    <Menu>
+                    <Menu2>
                         <MenuLink to="/cart">
                             <CartAnim>
                                 <Badge aria-label={"Cart Page Link"} badgeContent={cartItems} color = "primary" overlap="rectangular" style={{ padding: '1px' }}>
@@ -111,7 +111,7 @@ const Navbar = ({page}) => {
                                 </Badge>
                             </CartAnim>
                         </MenuLink>
-                    </Menu>
+                    </Menu2>
                 </Right>
             </Wrapper>
             <Expand ref={parentRef} style={{height: isExpanded ? "450px" : "0"}} onTransitionEnd={handleTransitionEnd}>

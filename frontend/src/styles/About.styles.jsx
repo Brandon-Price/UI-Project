@@ -2,6 +2,10 @@ import styled, {keyframes} from "styled-components";
 import {COLORS} from "./Navbar.styles.jsx";
 
 export const Container = styled.div`
+    
+`
+
+export const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
